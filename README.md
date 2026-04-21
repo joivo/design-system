@@ -1,21 +1,16 @@
-# Design System
+# @personal/design-system
 
-Centralized design system for personal projects with shared components, design tokens, and styling utilities.
+Framework-agnostic design tokens, CSS utilities, and animations for personal projects.
 
-## Features
+Pure CSS. No JavaScript runtime. Works with React, Vue, Svelte, plain HTML, or anything that can import a CSS file.
 
-- ✨ Shared React components (Card, Modal, Button)
-- 🎨 Design tokens (colors, spacing, typography)
-- 🌓 Dark/light theme support
-- 💎 Glassmorphism utilities
-- 🎭 Custom animations
-- 🎯 Tailwind CSS integration
+## Install
 
-## Installation
+```bash
+npm install @personal/design-system
+```
 
-### Using Local Path (Recommended for Development)
-
-In your project's `package.json`:
+Or use a local path:
 
 ```json
 {
@@ -25,185 +20,121 @@ In your project's `package.json`:
 }
 ```
 
-### Using npm Link
-
-```bash
-# In design-system directory
-cd design-system
-npm link
-
-# In your project directory
-cd finance-app
-npm link @personal/design-system
-```
-
 ## Usage
 
-### 1. Import CSS in Your Main Entry Point
+### Import everything
 
-```tsx
-// src/main.tsx
-import '@personal/design-system/css';
-import App from './App';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+```css
+@import "@personal/design-system";
 ```
 
-### 2. Configure Tailwind CSS
+Or in a JS/TS entry point:
 
-Create or update `tailwind.config.js`:
+```js
+import "@personal/design-system";
+```
 
-```javascript
-import designSystemPlugin from '@personal/design-system/tailwind-plugin';
+### Cherry-pick layers
+
+```css
+@import "@personal/design-system/tokens";
+@import "@personal/design-system/utilities";
+@import "@personal/design-system/animations";
+```
+
+### With Tailwind CSS
+
+```js
+import designSystemPlugin from "@personal/design-system/tailwind-plugin";
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode: ['class', '[data-theme="dark"]'],
-  theme: {
-    extend: {
-      // Custom extensions can go here
-    },
-  },
-  plugins: [
-    designSystemPlugin(),
-  ],
+  plugins: [designSystemPlugin()],
 };
 ```
 
-### 3. Use Components
+## Tokens
 
-```tsx
-import { Card, CardHeader, CardTitle, CardContent } from '@personal/design-system/components';
-
-function MyComponent() {
-  return (
-    <Card glass>
-      <CardHeader>
-        <CardTitle>Hello World</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>This is a shared card component!</p>
-      </CardContent>
-    </Card>
-  );
-}
-```
-
-### 4. Use Utilities
-
-```tsx
-import { cn } from '@personal/design-system';
-
-function MyComponent() {
-  return (
-    <div className={cn('p-4 bg-surface rounded-lg', 'hover:bg-surface/80')}>
-      <p className="ds-text-gradient">Gradient Text</p>
-      <div className="ds-glass p-4">Glass Effect</div>
-    </div>
-  );
-}
-```
-
-## Theme Switching
-
-The design system supports dark/light themes via the `data-theme` attribute:
-
-```tsx
-function ThemeToggle() {
-  const toggleTheme = () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-  };
-
-  return <button onClick={toggleTheme}>Toggle Theme</button>;
-}
-```
-
-## Design Tokens
+All tokens are CSS custom properties prefixed with `--ds-`.
 
 ### Colors
-- `--ds-background`: Background color
-- `--ds-surface`: Surface color for cards/modals
-- `--ds-text`: Primary text color
-- `--ds-text-muted`: Secondary text color
-- `--ds-primary`: Primary accent color
-- `--ds-secondary`: Secondary accent color
-- `--ds-border`: Border color
-- `--ds-success`: Success color
-- `--ds-warning`: Warning color
-- `--ds-error`: Error color
+
+| Token | Dark | Light |
+|---|---|---|
+| `--ds-background` | `#0a0a0a` | `#fafafa` |
+| `--ds-surface` | `#111111` | `#ffffff` |
+| `--ds-surface-alt` | `#1a1a1a` | `#f0f0f0` |
+| `--ds-text` | `#e0e0e0` | `#1a1a1a` |
+| `--ds-text-muted` | `#808080` | `#737373` |
+| `--ds-primary` | `#00e5ff` | `#0077b6` |
+| `--ds-secondary` | `#b388ff` | `#7c3aed` |
+| `--ds-border` | `#2a2a2a` | `#d4d4d4` |
+| `--ds-success` | `#00ff88` | `#047857` |
+| `--ds-warning` | `#ffcc00` | `#b45309` |
+| `--ds-error` | `#ff3366` | `#dc2626` |
+| `--ds-info` | `#00b4d8` | `#0284c7` |
 
 ### Spacing
-- `--ds-spacing-xs`: 0.25rem
-- `--ds-spacing-sm`: 0.5rem
-- `--ds-spacing-md`: 1rem
-- `--ds-spacing-lg`: 1.5rem
-- `--ds-spacing-xl`: 2rem
+
+| Token | Value |
+|---|---|
+| `--ds-spacing-xs` | 0.25rem |
+| `--ds-spacing-sm` | 0.5rem |
+| `--ds-spacing-md` | 0.75rem |
+| `--ds-spacing-lg` | 1rem |
+| `--ds-spacing-xl` | 1.5rem |
+| `--ds-spacing-2xl` | 2rem |
 
 ### Border Radius
-- `--ds-radius-sm`: 0.375rem
-- `--ds-radius-md`: 0.5rem
-- `--ds-radius-lg`: 0.75rem
-- `--ds-radius-xl`: 1rem
 
-### Shadows
-- `--ds-shadow-sm`, `--ds-shadow-md`, `--ds-shadow-lg`, `--ds-shadow-xl`
+| Token | Value |
+|---|---|
+| `--ds-radius-none` | 0px |
+| `--ds-radius-sm` | 2px |
+| `--ds-radius-md` | 4px |
+| `--ds-radius-lg` | 6px |
+| `--ds-radius-xl` | 8px |
 
-## Development
+## Utility Classes
 
-```bash
-cd design-system
+| Class | Description |
+|---|---|
+| `ds-panel` | Surface background + border + rounded corners |
+| `ds-panel-accent` | Panel with primary-colored left border |
+| `ds-glass` | Glassmorphism (70% bg + backdrop blur) |
+| `ds-text-glow` | Primary color with glow text-shadow |
+| `ds-mono` | Monospace font stack |
+| `ds-sans` | Sans-serif font stack |
+| `ds-prefix` | Terminal-style `> ` prefix |
+| `ds-bracket` | Wraps content in `[ ]` |
+| `ds-dot` | 6px status dot (variants: `-success`, `-warning`, `-error`, `-primary`) |
+| `ds-crt-glow` | CRT-style box glow |
+| `ds-grid-bordered` | Container with bordered children |
+| `ds-container` | Centered max-width container |
+| `ds-custom-scrollbar` | Minimal 4px scrollbar |
+| `ds-separator` | 1px horizontal divider |
+| `ds-kbd` | Keyboard shortcut display |
+| `ds-row-hover` | Row highlight on hover |
+| `ds-cursor-blink` | Blinking cursor `|` |
 
-# Install dependencies
-npm install
+## Animations
 
-# Build the package
-npm run build
+| Class | Effect |
+|---|---|
+| `animate-ds-fade-in` | Fade in (150ms) |
+| `animate-ds-slide-up` | Slide up + fade in (250ms) |
+| `animate-ds-slide-down` | Slide down + fade in (250ms) |
 
-# Watch for changes
-npm run dev
+## Themes
 
-# Run linting
-npm run lint
+Dark is the default. Toggle light mode by setting `data-theme="light"` on the root element:
+
+```js
+document.documentElement.setAttribute('data-theme', 'light');
 ```
 
-## Migration Guide
+## Architecture
 
-To migrate existing projects to use the centralized design system:
-
-1. **Replace CSS imports:**
-   ```tsx
-   // Old
-   import './index.css';
-   
-   // New
-   import '@personal/design-system/css';
-   ```
-
-2. **Update Tailwind config:**
-   - Add design system plugin
-   - Remove duplicate color/font definitions
-
-3. **Replace shared components:**
-   ```tsx
-   // Old
-   import { Card } from './components/ui/Card';
-   
-   // New
-   import { Card } from '@personal/design-system/components';
-   ```
-
-4. **Update color references:**
-   - Use Tailwind classes (`bg-surface`, `text-text-muted`)
-   - Or CSS variables (`var(--ds-surface)`)
+See [ADR-001](docs/adr/001-css-pure-framework-agnostic.md) for the decision to adopt a CSS-pure architecture.
 
 ## License
 
