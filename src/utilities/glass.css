@@ -1,0 +1,9 @@
+/* Design System - Glassmorphism Utility */
+
+@layer utilities {
+  .ds-glass {
+    background: color-mix(in srgb, var(--ds-background) 70%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}

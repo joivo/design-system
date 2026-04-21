@@ -1,0 +1,36 @@
+/* Design System - Text Utilities */
+
+@layer utilities {
+  .ds-text-glow {
+    color: var(--ds-primary);
+    text-shadow: 0 0 20px color-mix(in srgb, var(--ds-primary) 30%, transparent);
+  }
+
+  [data-theme='light'] .ds-text-glow {
+    text-shadow: none;
+  }
+
+  .ds-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  }
+
+  .ds-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .ds-prefix::before {
+    content: '> ';
+    color: var(--ds-primary);
+    font-weight: 600;
+  }
+
+  .ds-bracket::before {
+    content: '[ ';
+    color: var(--ds-text-muted);
+  }
+
+  .ds-bracket::after {
+    content: ' ]';
+    color: var(--ds-text-muted);
+  }
+}

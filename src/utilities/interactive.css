@@ -1,0 +1,40 @@
+/* Design System - Interactive Utilities */
+
+@layer utilities {
+  .ds-kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--ds-text-muted);
+    background-color: var(--ds-surface-alt);
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-sm);
+  }
+
+  .ds-row-hover {
+    transition: background-color var(--ds-transition-fast) ease;
+  }
+
+  .ds-row-hover:hover {
+    background-color: var(--ds-surface-alt);
+  }
+
+  .ds-cursor-blink::after {
+    content: '|';
+    animation: ds-blink 1s step-end infinite;
+    color: var(--ds-primary);
+    margin-left: 2px;
+  }
+
+  .ds-crt-glow {
+    box-shadow: 0 0 10px 2px color-mix(in srgb, var(--ds-primary) 40%, transparent);
+  }
+
+  [data-theme='light'] .ds-crt-glow {
+    box-shadow: 0 0 8px 1px color-mix(in srgb, var(--ds-primary) 30%, transparent);
+  }
+}

@@ -1,0 +1,21 @@
+/* Design System - Scrollbar Utilities */
+
+@layer utilities {
+  .ds-custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .ds-custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ds-custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--ds-border);
+    border-radius: 0;
+  }
+
+  .ds-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--ds-border-focus);
+  }
+}

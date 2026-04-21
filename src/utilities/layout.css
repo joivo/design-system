@@ -1,0 +1,33 @@
+/* Design System - Layout Utilities */
+
+@layer utilities {
+  .ds-grid-bordered {
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-md);
+    overflow: hidden;
+  }
+
+  .ds-grid-bordered > * {
+    border-bottom: 1px solid var(--ds-border);
+  }
+
+  .ds-grid-bordered > *:last-child {
+    border-bottom: none;
+  }
+
+  .ds-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--ds-spacing-md);
+    padding-right: var(--ds-spacing-md);
+  }
+
+  .ds-separator {
+    height: 1px;
+    background-color: var(--ds-border);
+    border: none;
+    margin: var(--ds-spacing-md) 0;
+  }
+}

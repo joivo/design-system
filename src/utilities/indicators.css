@@ -1,0 +1,16 @@
+/* Design System - Dot Indicator Utilities */
+
+@layer utilities {
+  .ds-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--ds-text-muted);
+  }
+
+  .ds-dot-success { background-color: var(--ds-success); }
+  .ds-dot-warning { background-color: var(--ds-warning); }
+  .ds-dot-error { background-color: var(--ds-error); }
+  .ds-dot-primary { background-color: var(--ds-primary); }
+}

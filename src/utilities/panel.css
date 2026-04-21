@@ -1,0 +1,16 @@
+/* Design System - Panel Utilities */
+
+@layer utilities {
+  .ds-panel {
+    background-color: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-md);
+  }
+
+  .ds-panel-accent {
+    background-color: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-left: 2px solid var(--ds-primary);
+    border-radius: var(--ds-radius-md);
+  }
+}
