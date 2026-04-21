@@ -74,9 +74,9 @@ app.innerHTML = `
       <h5>h5 -- Inter 0.875rem</h5>
       <h6>h6 -- Inter 0.8125rem</h6>
       <hr class="ds-separator">
-      <p>Body text -- JetBrains Mono 13px. The quick brown fox jumps over the lazy dog.</p>
+      <p>Body text -- Inter 15px. The quick brown fox jumps over the lazy dog.</p>
       <p style="color: var(--ds-text-muted);">Muted text -- secondary information and labels.</p>
-      <p class="ds-sans">Sans-serif (.ds-sans) -- Inter for mixed UI elements.</p>
+      <p class="ds-mono">Mono accent (.ds-mono) -- JetBrains Mono for code, nav, labels.</p>
     </div>
   </section>
 
@@ -158,6 +158,25 @@ app.innerHTML = `
     <div class="ds-panel ds-custom-scrollbar" style="max-height: 80px; overflow-y: auto; padding: var(--ds-spacing-md); max-width: 300px;">
       <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p>
       <p>Line 5</p><p>Line 6</p><p>Line 7</p><p>Line 8</p>
+    </div>
+  </section>
+
+  <!-- PIXEL WAVES -->
+  <section class="dev-section">
+    <h2 class="ds-prefix">Pixel Waves</h2>
+    <div class="ds-pixel-waves" style="background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
+      <p style="color: var(--ds-text-muted);" class="ds-mono">.ds-pixel-waves -- 8px grid wave texture at bottom</p>
+    </div>
+  </section>
+
+  <!-- BIOLUMINESCENT -->
+  <section class="dev-section">
+    <h2 class="ds-prefix">Bioluminescent</h2>
+    <div class="dev-flex">
+      <div class="ds-panel ds-bioluminescent" style="padding: var(--ds-spacing-lg); width: 200px;">
+        <code>.ds-bioluminescent</code>
+        <p style="color: var(--ds-text-muted); font-size: 11px; margin-top: 4px;">Decorative accent dot</p>
+      </div>
     </div>
   </section>
 
