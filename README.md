@@ -58,20 +58,20 @@ All tokens are CSS custom properties prefixed with `--ds-`.
 
 ### Colors
 
-| Token | Dark | Light |
+| Token | Dark (Night Dive) | Light (Day Beach) |
 |---|---|---|
-| `--ds-background` | `#0a0a0a` | `#fafafa` |
-| `--ds-surface` | `#111111` | `#ffffff` |
-| `--ds-surface-alt` | `#1a1a1a` | `#f0f0f0` |
-| `--ds-text` | `#e0e0e0` | `#1a1a1a` |
-| `--ds-text-muted` | `#808080` | `#737373` |
-| `--ds-primary` | `#00e5ff` | `#0077b6` |
-| `--ds-secondary` | `#b388ff` | `#7c3aed` |
-| `--ds-border` | `#2a2a2a` | `#d4d4d4` |
-| `--ds-success` | `#00ff88` | `#047857` |
-| `--ds-warning` | `#ffcc00` | `#b45309` |
-| `--ds-error` | `#ff3366` | `#dc2626` |
-| `--ds-info` | `#00b4d8` | `#0284c7` |
+| `--ds-background` | `#0a1520` | `#faf6f0` |
+| `--ds-surface` | `#152838` | `#ffffff` |
+| `--ds-surface-alt` | `#102030` | `#f0e8d8` |
+| `--ds-text` | `#b0c4d4` | `#2c3e50` |
+| `--ds-text-muted` | `#3a6a80` | `#8a9aaa` |
+| `--ds-primary` | `#00bcd4` | `#0077a8` |
+| `--ds-secondary` | `#80cbc4` | `#5ba4b5` |
+| `--ds-border` | `#264a60` | `#e0d4b8` |
+| `--ds-success` | `#00e676` | `#2e7d32` |
+| `--ds-warning` | `#ffc107` | `#f57f17` |
+| `--ds-error` | `#ff5252` | `#c62828` |
+| `--ds-info` | `#29b6f6` | `#0277bd` |
 
 ### Spacing
 
@@ -115,6 +115,8 @@ All tokens are CSS custom properties prefixed with `--ds-`.
 | `ds-kbd` | Keyboard shortcut display |
 | `ds-row-hover` | Row highlight on hover |
 | `ds-cursor-blink` | Blinking cursor `|` |
+| `ds-pixel-waves` | 8px grid pixel wave texture at element bottom |
+| `ds-bioluminescent` | Decorative accent dot with subtle glow (dark only) |
 
 ## Animations
 
@@ -126,7 +128,9 @@ All tokens are CSS custom properties prefixed with `--ds-`.
 
 ## Themes
 
-Dark is the default. Toggle light mode by setting `data-theme="light"` on the root element:
+"Same ocean, different hour." Dark is the Night Dive (default). Light is the Day Beach.
+
+Toggle by setting `data-theme="light"` on the root element:
 
 ```js
 document.documentElement.setAttribute('data-theme', 'light');
