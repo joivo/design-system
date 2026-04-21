@@ -1,0 +1,33 @@
+/* Design System - Dark Theme Base (Default) */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--ds-border);
+  }
+
+  body {
+    background-color: var(--ds-background);
+    color: var(--ds-text);
+    transition: background-color var(--ds-transition-base) ease,
+                color var(--ds-transition-base) ease;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--ds-primary);
+    color: var(--ds-background);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--ds-primary);
+    outline-offset: 1px;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
