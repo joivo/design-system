@@ -31,10 +31,10 @@
   }
 
   .ds-crt-glow {
-    box-shadow: 0 0 10px 2px color-mix(in srgb, var(--ds-primary) 40%, transparent);
+    box-shadow: 0 0 8px 1px color-mix(in srgb, var(--ds-primary) 15%, transparent);
   }
 
   [data-theme='light'] .ds-crt-glow {
-    box-shadow: 0 0 8px 1px color-mix(in srgb, var(--ds-primary) 30%, transparent);
+    box-shadow: 0 0 4px 0 color-mix(in srgb, var(--ds-primary) 10%, transparent);
   }
 }
