@@ -1,8 +1,13 @@
 # @personal/design-system
 
+[![CI](https://github.com/joivo/design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/joivo/design-system/actions/workflows/ci.yml)
+[![Showcase](https://github.com/joivo/design-system/actions/workflows/pages.yml/badge.svg)](https://joivo.github.io/design-system/)
+
 Framework-agnostic design tokens, CSS utilities, and animations for personal projects.
 
 Pure CSS. No JavaScript runtime. Works with React, Vue, Svelte, plain HTML, or anything that can import a CSS file.
+
+**[Live Showcase](https://joivo.github.io/design-system/)** -- interactive preview of all tokens, utilities, and animations.
 
 ## Install
 
