@@ -1,0 +1,67 @@
+export default function designSystemPlugin() {
+  return {
+    name: '@personal/design-system',
+    theme: {
+      extend: {
+        colors: {
+          background: 'var(--ds-background)',
+          surface: 'var(--ds-surface)',
+          'surface-alt': 'var(--ds-surface-alt)',
+          text: 'var(--ds-text)',
+          'text-muted': 'var(--ds-text-muted)',
+          primary: 'var(--ds-primary)',
+          secondary: 'var(--ds-secondary)',
+          border: 'var(--ds-border)',
+          'border-focus': 'var(--ds-border-focus)',
+          success: 'var(--ds-success)',
+          warning: 'var(--ds-warning)',
+          error: 'var(--ds-error)',
+          info: 'var(--ds-info)',
+          income: 'var(--ds-income)',
+          expense: 'var(--ds-expense)',
+          'chart-1': 'var(--ds-chart-1)',
+          'chart-2': 'var(--ds-chart-2)',
+          'chart-3': 'var(--ds-chart-3)',
+          'chart-4': 'var(--ds-chart-4)',
+          'chart-5': 'var(--ds-chart-5)',
+          'chart-6': 'var(--ds-chart-6)',
+          'github-contrib-none': 'var(--ds-github-contrib-none)',
+          'github-contrib-low': 'var(--ds-github-contrib-low)',
+          'github-contrib-medium': 'var(--ds-github-contrib-medium)',
+          'github-contrib-high': 'var(--ds-github-contrib-high)',
+          'github-contrib-very-high': 'var(--ds-github-contrib-very-high)',
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
+        },
+        spacing: {
+          'ds-xs': 'var(--ds-spacing-xs)',
+          'ds-sm': 'var(--ds-spacing-sm)',
+          'ds-md': 'var(--ds-spacing-md)',
+          'ds-lg': 'var(--ds-spacing-lg)',
+          'ds-xl': 'var(--ds-spacing-xl)',
+          'ds-2xl': 'var(--ds-spacing-2xl)',
+        },
+        borderRadius: {
+          'ds-none': '0px',
+          'ds-sm': 'var(--ds-radius-sm)',
+          'ds-md': 'var(--ds-radius-md)',
+          'ds-lg': 'var(--ds-radius-lg)',
+          'ds-xl': 'var(--ds-radius-xl)',
+        },
+        boxShadow: {
+          'ds-sm': 'var(--ds-shadow-sm)',
+          'ds-md': 'var(--ds-shadow-md)',
+          'ds-lg': 'var(--ds-shadow-lg)',
+          'ds-xl': 'var(--ds-shadow-xl)',
+        },
+        transitionDuration: {
+          'ds-fast': '100ms',
+          'ds-base': '150ms',
+          'ds-slow': '250ms',
+        },
+      },
+    },
+  };
+}

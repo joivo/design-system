@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Design System v2.0 - TUI-Inspired Design Tokens */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    /* Dark Theme (Default) - Terminal-inspired palette */
+    --ds-background: #0a0a0a;
+    --ds-surface: #111111;
+    --ds-surface-alt: #1a1a1a;
+    --ds-text: #e0e0e0;
+    --ds-text-muted: #808080;
+    --ds-primary: #00e5ff;
+    --ds-secondary: #b388ff;
+    --ds-border: #2a2a2a;
+    --ds-border-focus: #444444;
+    --ds-success: #00ff88;
+    --ds-warning: #ffcc00;
+    --ds-error: #ff3366;
+    --ds-info: #00b4d8;
+
+    /* Semantic finance colors */
+    --ds-income: #00ff88;
+    --ds-expense: #ff3366;
+
+    /* GitHub contribution colors - dark mode */
+    --ds-github-contrib-none: #161b22;
+    --ds-github-contrib-low: #0e4429;
+    --ds-github-contrib-medium: #006d32;
+    --ds-github-contrib-high: #26a641;
+    --ds-github-contrib-very-high: #39d353;
+
+    /* Spacing - tighter for density */
+    --ds-spacing-xs: 0.25rem;
+    --ds-spacing-sm: 0.5rem;
+    --ds-spacing-md: 0.75rem;
+    --ds-spacing-lg: 1rem;
+    --ds-spacing-xl: 1.5rem;
+    --ds-spacing-2xl: 2rem;
+
+    /* Border Radius - sharp by default */
+    --ds-radius-none: 0px;
+    --ds-radius-sm: 2px;
+    --ds-radius-md: 4px;
+    --ds-radius-lg: 6px;
+    --ds-radius-xl: 8px;
+
+    /* Transitions */
+    --ds-transition-fast: 100ms;
+    --ds-transition-base: 150ms;
+    --ds-transition-slow: 250ms;
+
+    /* Shadows - minimal, border-driven instead */
+    --ds-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --ds-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4);
+    --ds-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --ds-shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.6);
+
+    /* Chart palette - high contrast terminal colors */
+    --ds-chart-1: #00e5ff;
+    --ds-chart-2: #00ff88;
+    --ds-chart-3: #ffcc00;
+    --ds-chart-4: #ff3366;
+    --ds-chart-5: #b388ff;
+    --ds-chart-6: #ff8a65;
+  }
+
+  /* Light Theme */
+  [data-theme='light'] {
+    color-scheme: light;
+    --ds-background: #fafafa;
+    --ds-surface: #ffffff;
+    --ds-surface-alt: #f0f0f0;
+    --ds-text: #1a1a1a;
+    --ds-text-muted: #737373;
+    --ds-primary: #0077b6;
+    --ds-secondary: #7c3aed;
+    --ds-border: #d4d4d4;
+    --ds-border-focus: #a3a3a3;
+    --ds-success: #047857;
+    --ds-warning: #b45309;
+    --ds-error: #dc2626;
+    --ds-info: #0284c7;
+
+    --ds-income: #047857;
+    --ds-expense: #dc2626;
+
+    /* GitHub contribution colors - light mode */
+    --ds-github-contrib-none: #ebedf0;
+    --ds-github-contrib-low: #9be9a8;
+    --ds-github-contrib-medium: #40c463;
+    --ds-github-contrib-high: #30a14e;
+    --ds-github-contrib-very-high: #216e39;
+
+    --ds-chart-1: #0077b6;
+    --ds-chart-2: #059669;
+    --ds-chart-3: #d97706;
+    --ds-chart-4: #dc2626;
+    --ds-chart-5: #7c3aed;
+    --ds-chart-6: #ea580c;
+  }
+}
+
+/* Global Base Styles */
+@layer base {
+  * {
+    border-color: var(--ds-border);
+  }
+
+  body {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    background-color: var(--ds-background);
+    color: var(--ds-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--ds-transition-base) ease,
+                color var(--ds-transition-base) ease;
+    overflow-x: hidden;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.375rem; }
+  h3 { font-size: 1.125rem; }
+  h4 { font-size: 1rem; }
+  h5 { font-size: 0.875rem; }
+  h6 { font-size: 0.8125rem; }
+
+  /* TUI-style selection */
+  ::selection {
+    background-color: var(--ds-primary);
+    color: var(--ds-background);
+  }
+
+  /* Form elements - terminal aesthetic */
+  input, select, textarea {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 13px;
+  }
+
+  /* TUI-style focus ring */
+  :focus-visible {
+    outline: 1px solid var(--ds-primary);
+    outline-offset: 1px;
+  }
+
+  /* Tabular figures for numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Component Utilities */
+@layer utilities {
+  /* Panel with TUI border */
+  .ds-panel {
+    background-color: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-md);
+  }
+
+  /* Panel with highlight border on left - like a terminal status line */
+  .ds-panel-accent {
+    background-color: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-left: 2px solid var(--ds-primary);
+    border-radius: var(--ds-radius-md);
+  }
+
+  /* Text with primary color glow effect (for hero numbers) */
+  .ds-text-glow {
+    color: var(--ds-primary);
+    text-shadow: 0 0 20px color-mix(in srgb, var(--ds-primary) 30%, transparent);
+  }
+
+  [data-theme='light'] .ds-text-glow {
+    text-shadow: none;
+  }
+
+  /* Monospace text */
+  .ds-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  }
+
+  /* Sans-serif text (for headings mixed with mono body) */
+  .ds-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Terminal-style prefix decorators */
+  .ds-prefix::before {
+    content: '> ';
+    color: var(--ds-primary);
+    font-weight: 600;
+  }
+
+  .ds-bracket::before {
+    content: '[ ';
+    color: var(--ds-text-muted);
+  }
+  .ds-bracket::after {
+    content: ' ]';
+    color: var(--ds-text-muted);
+  }
+
+  /* Status dot indicator */
+  .ds-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--ds-text-muted);
+  }
+
+  .ds-dot-success { background-color: var(--ds-success); }
+  .ds-dot-warning { background-color: var(--ds-warning); }
+  .ds-dot-error { background-color: var(--ds-error); }
+  .ds-dot-primary { background-color: var(--ds-primary); }
+
+  /* Retro / Premium Aesthetics */
+  .ds-crt-glow {
+    box-shadow: 0 0 10px 2px color-mix(in srgb, var(--ds-primary) 40%, transparent);
+  }
+
+  [data-theme='light'] .ds-crt-glow {
+    box-shadow: 0 0 8px 1px color-mix(in srgb, var(--ds-primary) 30%, transparent);
+  }
+  
+  .ds-glass {
+    background: color-mix(in srgb, var(--ds-background) 70%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Dense grid with visible borders */
+  .ds-grid-bordered {
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-md);
+    overflow: hidden;
+  }
+
+  .ds-grid-bordered > * {
+    border-bottom: 1px solid var(--ds-border);
+  }
+
+  .ds-grid-bordered > *:last-child {
+    border-bottom: none;
+  }
+
+  /* Container */
+  .ds-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--ds-spacing-md);
+    padding-right: var(--ds-spacing-md);
+  }
+
+  /* Scrollbar - minimal */
+  .ds-custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .ds-custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ds-custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--ds-border);
+    border-radius: 0;
+  }
+
+  .ds-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--ds-border-focus);
+  }
+
+  /* Separator line */
+  .ds-separator {
+    height: 1px;
+    background-color: var(--ds-border);
+    border: none;
+    margin: var(--ds-spacing-md) 0;
+  }
+
+  /* TUI-style kbd / shortcut display */
+  .ds-kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--ds-text-muted);
+    background-color: var(--ds-surface-alt);
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-sm);
+  }
+
+  /* Hover row highlight */
+  .ds-row-hover {
+    transition: background-color var(--ds-transition-fast) ease;
+  }
+
+  .ds-row-hover:hover {
+    background-color: var(--ds-surface-alt);
+  }
+
+  /* Blinking cursor animation for loading states */
+  .ds-cursor-blink::after {
+    content: '|';
+    animation: ds-blink 1s step-end infinite;
+    color: var(--ds-primary);
+    margin-left: 2px;
+  }
+}
+
+/* Animations */
+@keyframes ds-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ds-slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ds-slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ds-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes ds-scan {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+.animate-ds-fade-in {
+  animation: ds-fade-in var(--ds-transition-base) ease-out;
+}
+
+.animate-ds-slide-up {
+  animation: ds-slide-up var(--ds-transition-slow) ease-out;
+}
+
+.animate-ds-slide-down {
+  animation: ds-slide-down var(--ds-transition-slow) ease-out;
+}

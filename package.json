@@ -1,0 +1,48 @@
+{
+  "name": "@personal/design-system",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Centralized design system for personal projects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./css": "./dist/index.css",
+    "./tailwind-plugin": "./dist/tailwind-plugin.js",
+    "./components": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build && cp src/index.css dist/ && cp src/tailwind-plugin.ts dist/tailwind-plugin.js && cp src/tokens.ts dist/tokens.js",
+    "dev": "vite",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
