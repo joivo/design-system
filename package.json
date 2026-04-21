@@ -16,10 +16,12 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.tailwind.json"
+    "build": "tsc -p tsconfig.tailwind.json",
+    "dev": "vite"
   },
   "devDependencies": {
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
   },
   "files": [
     "src/",

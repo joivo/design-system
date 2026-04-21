@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Showcase</title>
+  <style>
+    @import url('./src/index.css');
+
+    /* Showcase-specific layout styles */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--ds-spacing-md);
+    }
+
+    .showcase-section {
+      margin-bottom: var(--ds-spacing-2xl);
+    }
+
+    .showcase-section h2 {
+      border-bottom: 1px solid var(--ds-border);
+      padding-bottom: var(--ds-spacing-sm);
+      margin-bottom: var(--ds-spacing-lg);
+    }
+
+    .swatch {
+      padding: var(--ds-spacing-md);
+      border: 1px solid var(--ds-border);
+      border-radius: var(--ds-radius-md);
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .swatch-label {
+      color: var(--ds-text-muted);
+      margin-top: var(--ds-spacing-xs);
+    }
+
+    .spacing-bar {
+      background-color: var(--ds-primary);
+      height: 8px;
+      border-radius: var(--ds-radius-sm);
+      opacity: 0.7;
+    }
+
+    .radius-box {
+      width: 64px;
+      height: 64px;
+      background-color: var(--ds-surface-alt);
+      border: 1px solid var(--ds-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--ds-text-muted);
+    }
+
+    .shadow-box {
+      width: 100%;
+      height: 64px;
+      background-color: var(--ds-surface);
+      border-radius: var(--ds-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--ds-text-muted);
+    }
+
+    .animation-box {
+      padding: var(--ds-spacing-md);
+      background-color: var(--ds-surface);
+      border: 1px solid var(--ds-border);
+      border-radius: var(--ds-radius-md);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .animation-box:hover {
+      border-color: var(--ds-primary);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: var(--ds-spacing-md);
+      right: var(--ds-spacing-md);
+      z-index: 100;
+      padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+      background-color: var(--ds-surface);
+      border: 1px solid var(--ds-border);
+      border-radius: var(--ds-radius-md);
+      color: var(--ds-text);
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--ds-primary);
+    }
+
+    .inline-flex {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--ds-spacing-sm);
+    }
+
+    .flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--ds-spacing-md);
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--ds-spacing-sm);
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <div class="ds-container" style="padding-top: var(--ds-spacing-2xl); padding-bottom: var(--ds-spacing-2xl);">
+
+    <h1>@personal/design-system</h1>
+    <p style="color: var(--ds-text-muted); margin-bottom: var(--ds-spacing-2xl);">
+      v0.2.0 &mdash; Framework-agnostic design tokens, utilities, and animations
+    </p>
+
+    <!-- COLORS -->
+    <section class="showcase-section">
+      <h2>Colors</h2>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Core</h3>
+      <div class="showcase-grid" style="margin-bottom: var(--ds-spacing-lg);">
+        <div class="swatch" style="background-color: var(--ds-background); color: var(--ds-text);">
+          background<div class="swatch-label">--ds-background</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-surface); color: var(--ds-text);">
+          surface<div class="swatch-label">--ds-surface</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-surface-alt); color: var(--ds-text);">
+          surface-alt<div class="swatch-label">--ds-surface-alt</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-primary); color: var(--ds-background);">
+          primary<div class="swatch-label">--ds-primary</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-secondary); color: var(--ds-background);">
+          secondary<div class="swatch-label">--ds-secondary</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-border); color: var(--ds-text);">
+          border<div class="swatch-label">--ds-border</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-border-focus); color: var(--ds-text);">
+          border-focus<div class="swatch-label">--ds-border-focus</div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Text</h3>
+      <div class="showcase-grid" style="margin-bottom: var(--ds-spacing-lg);">
+        <div class="swatch" style="background-color: var(--ds-surface);">
+          <span style="color: var(--ds-text);">text</span>
+          <div class="swatch-label">--ds-text</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-surface);">
+          <span style="color: var(--ds-text-muted);">text-muted</span>
+          <div class="swatch-label">--ds-text-muted</div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Semantic</h3>
+      <div class="showcase-grid" style="margin-bottom: var(--ds-spacing-lg);">
+        <div class="swatch" style="background-color: var(--ds-success); color: #000;">
+          success<div class="swatch-label">--ds-success</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-warning); color: #000;">
+          warning<div class="swatch-label">--ds-warning</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-error); color: #000;">
+          error<div class="swatch-label">--ds-error</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-info); color: #000;">
+          info<div class="swatch-label">--ds-info</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-income); color: #000;">
+          income<div class="swatch-label">--ds-income</div>
+        </div>
+        <div class="swatch" style="background-color: var(--ds-expense); color: #000;">
+          expense<div class="swatch-label">--ds-expense</div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Chart Palette</h3>
+      <div class="showcase-grid" style="margin-bottom: var(--ds-spacing-lg);">
+        <div class="swatch" style="background-color: var(--ds-chart-1); color: #000;">1<div class="swatch-label">--ds-chart-1</div></div>
+        <div class="swatch" style="background-color: var(--ds-chart-2); color: #000;">2<div class="swatch-label">--ds-chart-2</div></div>
+        <div class="swatch" style="background-color: var(--ds-chart-3); color: #000;">3<div class="swatch-label">--ds-chart-3</div></div>
+        <div class="swatch" style="background-color: var(--ds-chart-4); color: #000;">4<div class="swatch-label">--ds-chart-4</div></div>
+        <div class="swatch" style="background-color: var(--ds-chart-5); color: #000;">5<div class="swatch-label">--ds-chart-5</div></div>
+        <div class="swatch" style="background-color: var(--ds-chart-6); color: #000;">6<div class="swatch-label">--ds-chart-6</div></div>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">GitHub Contributions</h3>
+      <div style="display: flex; gap: 4px; margin-bottom: var(--ds-spacing-lg);">
+        <div style="width: 32px; height: 32px; background: var(--ds-github-contrib-none); border-radius: var(--ds-radius-sm);" title="none"></div>
+        <div style="width: 32px; height: 32px; background: var(--ds-github-contrib-low); border-radius: var(--ds-radius-sm);" title="low"></div>
+        <div style="width: 32px; height: 32px; background: var(--ds-github-contrib-medium); border-radius: var(--ds-radius-sm);" title="medium"></div>
+        <div style="width: 32px; height: 32px; background: var(--ds-github-contrib-high); border-radius: var(--ds-radius-sm);" title="high"></div>
+        <div style="width: 32px; height: 32px; background: var(--ds-github-contrib-very-high); border-radius: var(--ds-radius-sm);" title="very-high"></div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="showcase-section">
+      <h2>Typography</h2>
+      <div class="ds-panel" style="padding: var(--ds-spacing-lg);">
+        <h1>h1 &mdash; Inter 1.75rem</h1>
+        <h2>h2 &mdash; Inter 1.375rem</h2>
+        <h3>h3 &mdash; Inter 1.125rem</h3>
+        <h4>h4 &mdash; Inter 1rem</h4>
+        <h5>h5 &mdash; Inter 0.875rem</h5>
+        <h6>h6 &mdash; Inter 0.8125rem</h6>
+        <hr class="ds-separator">
+        <p>Body text &mdash; JetBrains Mono 13px. The quick brown fox jumps over the lazy dog.</p>
+        <p style="color: var(--ds-text-muted);">Muted text &mdash; secondary information and labels.</p>
+        <p class="ds-sans">Sans-serif text (.ds-sans) &mdash; Inter for UI elements mixed with mono body.</p>
+      </div>
+    </section>
+
+    <!-- SPACING -->
+    <section class="showcase-section">
+      <h2>Spacing</h2>
+      <div class="stack">
+        <div class="inline-flex"><div class="spacing-bar" style="width: var(--ds-spacing-xs);"></div> <span style="color: var(--ds-text-muted); font-size: 11px;">xs (0.25rem)</span></div>
+        <div class="inline-flex"><div class="spacing-bar" style="width: var(--ds-spacing-sm);"></div> <span style="color: var(--ds-text-muted); font-size: 11px;">sm (0.5rem)</span></div>
+        <div class="inline-flex"><div class="spacing-bar" style="width: var(--ds-spacing-md);"></div> <span style="color: var(--ds-text-muted); font-size: 11px;">md (0.75rem)</span></div>
+        <div class="inline-flex"><div class="spacing-bar" style="width: var(--ds-spacing-lg);"></div> <span style="color: var(--ds-text-muted); font-size: 11px;">lg (1rem)</span></div>
+        <div class="inline-flex"><div class="spacing-bar" style="width: var(--ds-spacing-xl);"></div> <span style="color: var(--ds-text-muted); font-size: 11px;">xl (1.5rem)</span></div>
+        <div class="inline-flex"><div class="spacing-bar" style="width: var(--ds-spacing-2xl);"></div> <span style="color: var(--ds-text-muted); font-size: 11px;">2xl (2rem)</span></div>
+      </div>
+    </section>
+
+    <!-- BORDER RADIUS -->
+    <section class="showcase-section">
+      <h2>Border Radius</h2>
+      <div class="flex-wrap">
+        <div class="radius-box" style="border-radius: var(--ds-radius-none);">none</div>
+        <div class="radius-box" style="border-radius: var(--ds-radius-sm);">sm</div>
+        <div class="radius-box" style="border-radius: var(--ds-radius-md);">md</div>
+        <div class="radius-box" style="border-radius: var(--ds-radius-lg);">lg</div>
+        <div class="radius-box" style="border-radius: var(--ds-radius-xl);">xl</div>
+      </div>
+    </section>
+
+    <!-- SHADOWS -->
+    <section class="showcase-section">
+      <h2>Shadows</h2>
+      <div class="showcase-grid">
+        <div class="shadow-box" style="box-shadow: var(--ds-shadow-sm);">shadow-sm</div>
+        <div class="shadow-box" style="box-shadow: var(--ds-shadow-md);">shadow-md</div>
+        <div class="shadow-box" style="box-shadow: var(--ds-shadow-lg);">shadow-lg</div>
+        <div class="shadow-box" style="box-shadow: var(--ds-shadow-xl);">shadow-xl</div>
+      </div>
+    </section>
+
+    <!-- UTILITY CLASSES -->
+    <section class="showcase-section">
+      <h2>Utility Classes</h2>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Panels</h3>
+      <div class="showcase-grid" style="margin-bottom: var(--ds-spacing-lg);">
+        <div class="ds-panel" style="padding: var(--ds-spacing-lg);">
+          <code>.ds-panel</code>
+        </div>
+        <div class="ds-panel-accent" style="padding: var(--ds-spacing-lg);">
+          <code>.ds-panel-accent</code>
+        </div>
+        <div class="ds-glass ds-panel" style="padding: var(--ds-spacing-lg);">
+          <code>.ds-glass</code>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Text Effects</h3>
+      <div class="stack" style="margin-bottom: var(--ds-spacing-lg);">
+        <p class="ds-text-glow" style="font-size: 1.5rem;">Glowing text (.ds-text-glow)</p>
+        <p class="ds-prefix">Prefixed text (.ds-prefix)</p>
+        <p><span class="ds-bracket">Bracketed text</span> (.ds-bracket)</p>
+        <p class="ds-crt-glow ds-panel" style="padding: var(--ds-spacing-md); display: inline-block;">CRT glow (.ds-crt-glow)</p>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Indicators</h3>
+      <div class="flex-wrap" style="margin-bottom: var(--ds-spacing-lg);">
+        <span class="inline-flex"><span class="ds-dot"></span> default</span>
+        <span class="inline-flex"><span class="ds-dot-success"></span> success</span>
+        <span class="inline-flex"><span class="ds-dot-warning"></span> warning</span>
+        <span class="inline-flex"><span class="ds-dot-error"></span> error</span>
+        <span class="inline-flex"><span class="ds-dot-primary"></span> primary</span>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Interactive</h3>
+      <div class="stack" style="margin-bottom: var(--ds-spacing-lg);">
+        <p>Keyboard shortcut: <span class="ds-kbd">Ctrl</span> + <span class="ds-kbd">K</span></p>
+        <div class="ds-grid-bordered" style="max-width: 300px;">
+          <div class="ds-row-hover" style="padding: var(--ds-spacing-sm) var(--ds-spacing-md);">Row 1 (hover me)</div>
+          <div class="ds-row-hover" style="padding: var(--ds-spacing-sm) var(--ds-spacing-md);">Row 2 (hover me)</div>
+          <div class="ds-row-hover" style="padding: var(--ds-spacing-sm) var(--ds-spacing-md);">Row 3 (hover me)</div>
+        </div>
+        <p>Loading<span class="ds-cursor-blink"></span></p>
+      </div>
+
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Scrollbar</h3>
+      <div class="ds-panel ds-custom-scrollbar" style="max-height: 100px; overflow-y: auto; padding: var(--ds-spacing-md); max-width: 300px;">
+        <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p>
+        <p>Line 5</p><p>Line 6</p><p>Line 7</p><p>Line 8</p>
+      </div>
+    </section>
+
+    <!-- ANIMATIONS -->
+    <section class="showcase-section">
+      <h2>Animations</h2>
+      <p style="color: var(--ds-text-muted); margin-bottom: var(--ds-spacing-md);">Click a box to replay the animation.</p>
+      <div class="showcase-grid">
+        <div class="animation-box" onclick="replay(this, 'animate-ds-fade-in')">
+          <div class="animate-ds-fade-in">fade-in</div>
+        </div>
+        <div class="animation-box" onclick="replay(this, 'animate-ds-slide-up')">
+          <div class="animate-ds-slide-up">slide-up</div>
+        </div>
+        <div class="animation-box" onclick="replay(this, 'animate-ds-slide-down')">
+          <div class="animate-ds-slide-down">slide-down</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next === 'dark' ? '' : next);
+      if (next === 'dark') document.documentElement.removeAttribute('data-theme');
+    }
+
+    function replay(container, className) {
+      const el = container.querySelector('div');
+      el.classList.remove(className);
+      void el.offsetWidth; // force reflow
+      el.classList.add(className);
+    }
+  </script>
+</body>
+</html>
