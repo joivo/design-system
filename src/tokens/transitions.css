@@ -1,0 +1,9 @@
+/* Design System - Transition Tokens */
+
+@layer base {
+  :root {
+    --ds-transition-fast: 100ms;
+    --ds-transition-base: 150ms;
+    --ds-transition-slow: 250ms;
+  }
+}

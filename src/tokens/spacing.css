@@ -1,0 +1,12 @@
+/* Design System - Spacing Tokens */
+
+@layer base {
+  :root {
+    --ds-spacing-xs: 0.25rem;
+    --ds-spacing-sm: 0.5rem;
+    --ds-spacing-md: 0.75rem;
+    --ds-spacing-lg: 1rem;
+    --ds-spacing-xl: 1.5rem;
+    --ds-spacing-2xl: 2rem;
+  }
+}
