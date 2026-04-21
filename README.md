@@ -3,7 +3,7 @@
 [![CI](https://github.com/joivo/design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/joivo/design-system/actions/workflows/ci.yml)
 [![Showcase](https://github.com/joivo/design-system/actions/workflows/pages.yml/badge.svg)](https://joivo.github.io/design-system/)
 
-Framework-agnostic design tokens, CSS utilities, and animations for personal projects.
+Framework-agnostic CSS design tokens, utilities, and animations. "Deep Sea Terminal" visual identity -- same ocean, different hour.
 
 Pure CSS. No JavaScript runtime. Works with React, Vue, Svelte, plain HTML, or anything that can import a CSS file.
 
@@ -11,16 +11,24 @@ Pure CSS. No JavaScript runtime. Works with React, Vue, Svelte, plain HTML, or a
 
 ## Install
 
+From GitHub:
+
 ```bash
-npm install @personal/design-system
+npm install github:joivo/design-system
 ```
 
-Or use a local path:
+Pin to a specific version:
+
+```bash
+npm install github:joivo/design-system#v0.2.0
+```
+
+Or in `package.json`:
 
 ```json
 {
   "dependencies": {
-    "@personal/design-system": "file:../design-system"
+    "@personal/design-system": "github:joivo/design-system"
   }
 }
 ```
@@ -47,7 +55,29 @@ import "@personal/design-system";
 @import "@personal/design-system/animations";
 ```
 
-### With Tailwind CSS
+### With Tailwind CSS v4
+
+Use `@theme inline` to map DS tokens to Tailwind utility classes:
+
+```css
+@import "tailwindcss";
+@import "@personal/design-system";
+
+@theme inline {
+  --color-background: var(--ds-background);
+  --color-surface: var(--ds-surface);
+  --color-primary: var(--ds-primary);
+  --color-secondary: var(--ds-secondary);
+  --color-text: var(--ds-text);
+  --color-muted: var(--ds-text-muted);
+  --color-border: var(--ds-border);
+  /* ... map any tokens you need */
+}
+```
+
+This generates `bg-background`, `text-primary`, `border-border` etc. as proper Tailwind v4 utilities. Theme switching works automatically because the `--ds-*` variables change with `[data-theme]`.
+
+### With Tailwind CSS v3 (legacy)
 
 ```js
 import designSystemPlugin from "@personal/design-system/tailwind-plugin";
@@ -107,8 +137,8 @@ All tokens are CSS custom properties prefixed with `--ds-`.
 | `ds-panel-accent` | Panel with primary-colored left border |
 | `ds-glass` | Glassmorphism (70% bg + backdrop blur) |
 | `ds-text-glow` | Primary color with glow text-shadow |
-| `ds-mono` | Monospace font stack |
-| `ds-sans` | Sans-serif font stack |
+| `ds-mono` | Monospace font stack (JetBrains Mono) |
+| `ds-sans` | Sans-serif font stack (Inter) |
 | `ds-prefix` | Terminal-style `> ` prefix |
 | `ds-bracket` | Wraps content in `[ ]` |
 | `ds-dot` | 6px status dot (variants: `-success`, `-warning`, `-error`, `-primary`) |
@@ -119,7 +149,7 @@ All tokens are CSS custom properties prefixed with `--ds-`.
 | `ds-separator` | 1px horizontal divider |
 | `ds-kbd` | Keyboard shortcut display |
 | `ds-row-hover` | Row highlight on hover |
-| `ds-cursor-blink` | Blinking cursor `|` |
+| `ds-cursor-blink` | Blinking cursor `\|` |
 | `ds-pixel-waves` | 8px grid pixel wave texture at element bottom |
 | `ds-bioluminescent` | Decorative accent dot with subtle glow (dark only) |
 
@@ -147,4 +177,4 @@ See [ADR-001](docs/adr/001-css-pure-framework-agnostic.md) for the decision to a
 
 ## License
 
-MIT
+[MIT](LICENSE)
