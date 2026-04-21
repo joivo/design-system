@@ -1,0 +1,19 @@
+/* Design System - Slide Animations */
+
+@keyframes ds-slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ds-slide-down {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-ds-slide-up {
+  animation: ds-slide-up var(--ds-transition-slow) ease-out;
+}
+
+.animate-ds-slide-down {
+  animation: ds-slide-down var(--ds-transition-slow) ease-out;
+}
