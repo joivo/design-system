@@ -1,4 +1,4 @@
-# @personal/design-system
+# @joivo/design-system
 
 [![CI](https://github.com/joivo/design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/joivo/design-system/actions/workflows/ci.yml)
 [![Showcase](https://github.com/joivo/design-system/actions/workflows/pages.yml/badge.svg)](https://joivo.github.io/design-system/)
@@ -28,7 +28,7 @@ Or in `package.json`:
 ```json
 {
   "dependencies": {
-    "@personal/design-system": "github:joivo/design-system"
+    "@joivo/design-system": "github:joivo/design-system"
   }
 }
 ```
@@ -38,21 +38,21 @@ Or in `package.json`:
 ### Import everything
 
 ```css
-@import "@personal/design-system";
+@import "@joivo/design-system";
 ```
 
 Or in a JS/TS entry point:
 
 ```js
-import "@personal/design-system";
+import "@joivo/design-system";
 ```
 
 ### Cherry-pick layers
 
 ```css
-@import "@personal/design-system/tokens";
-@import "@personal/design-system/utilities";
-@import "@personal/design-system/animations";
+@import "@joivo/design-system/tokens";
+@import "@joivo/design-system/utilities";
+@import "@joivo/design-system/animations";
 ```
 
 ### With Tailwind CSS v4
@@ -61,7 +61,7 @@ Use `@theme inline` to map DS tokens to Tailwind utility classes:
 
 ```css
 @import "tailwindcss";
-@import "@personal/design-system";
+@import "@joivo/design-system";
 
 @theme inline {
   --color-background: var(--ds-background);
@@ -80,7 +80,7 @@ This generates `bg-background`, `text-primary`, `border-border` etc. as proper T
 ### With Tailwind CSS v3 (legacy)
 
 ```js
-import designSystemPlugin from "@personal/design-system/tailwind-plugin";
+import designSystemPlugin from "@joivo/design-system/tailwind-plugin";
 
 export default {
   plugins: [designSystemPlugin()],
