@@ -3,23 +3,23 @@
 @layer base {
   :root {
     /* Dark Theme: Night Dive */
-    --ds-background: #0a1520;
-    --ds-surface: #152838;
-    --ds-surface-alt: #102030;
-    --ds-text: #b0c4d4;
-    --ds-text-muted: #3a6a80;
-    --ds-primary: #00bcd4;
-    --ds-secondary: #80cbc4;
-    --ds-border: #264a60;
-    --ds-border-focus: #3a6a80;
-    --ds-success: #00e676;
-    --ds-warning: #ffc107;
-    --ds-error: #ff5252;
-    --ds-info: #29b6f6;
+    --ds-background: #0c0e13;
+    --ds-surface: #161a22;
+    --ds-surface-alt: #11141a;
+    --ds-text: #c4cad4;
+    --ds-text-muted: #525a66;
+    --ds-primary: #5eaab5;
+    --ds-secondary: #7a9ea8;
+    --ds-border: #252a33;
+    --ds-border-focus: #3a4250;
+    --ds-success: #4caf7d;
+    --ds-warning: #d4a030;
+    --ds-error: #cf5555;
+    --ds-info: #5a9ec4;
 
     /* Semantic finance colors */
-    --ds-income: #00e676;
-    --ds-expense: #ff5252;
+    --ds-income: #4caf7d;
+    --ds-expense: #cf5555;
 
     /* GitHub contribution colors */
     --ds-github-contrib-none: #161b22;
@@ -29,22 +29,22 @@
     --ds-github-contrib-very-high: #39d353;
 
     /* Chart palette */
-    --ds-chart-1: #00bcd4;
-    --ds-chart-2: #00e676;
-    --ds-chart-3: #ffc107;
-    --ds-chart-4: #ff5252;
-    --ds-chart-5: #80cbc4;
-    --ds-chart-6: #ff8a50;
-    --ds-chart-7: #ab47bc;
-    --ds-chart-8: #78909c;
-    --ds-chart-9: #4dd0e1;
-    --ds-chart-10: #aed581;
+    --ds-chart-1: #5eaab5;
+    --ds-chart-2: #4caf7d;
+    --ds-chart-3: #d4a030;
+    --ds-chart-4: #cf5555;
+    --ds-chart-5: #7a9ea8;
+    --ds-chart-6: #c47a50;
+    --ds-chart-7: #8a6aaa;
+    --ds-chart-8: #667580;
+    --ds-chart-9: #5a9eaa;
+    --ds-chart-10: #7a9a65;
   }
 
   [data-theme='light'] {
     /* Light Theme: Day Beach */
     --ds-background: #faf6f0;
-    --ds-surface: #fff;
+    --ds-surface: #ffffff;
     --ds-surface-alt: #f0e8d8;
     --ds-text: #2c3e50;
     --ds-text-muted: #8a9aaa;
@@ -59,7 +59,7 @@
     --ds-income: #2e7d32;
     --ds-expense: #c62828;
 
-    /* GitHub contribution colors -- unchanged */
+    /* GitHub contribution colors */
     --ds-github-contrib-none: #ebedf0;
     --ds-github-contrib-low: #9be9a8;
     --ds-github-contrib-medium: #40c463;
