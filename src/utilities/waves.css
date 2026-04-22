@@ -4,6 +4,7 @@
 @layer utilities {
   .ds-pixel-waves {
     position: relative;
+    padding-bottom: 120px;
   }
 
   .ds-pixel-waves::after {
