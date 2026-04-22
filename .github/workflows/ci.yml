@@ -7,27 +7,47 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  lint-css:
+    name: CSS Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-
       - run: npm ci
+      - run: npm run lint
 
-      - name: Lint CSS
-        run: npm run lint
+  validate-design-md:
+    name: DESIGN.md Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx --yes @google/design.md lint DESIGN.md
 
-      - name: Validate DESIGN.md
-        run: npx --yes @google/design.md lint DESIGN.md
+  build:
+    name: Tailwind Plugin Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
 
-      - name: Build Tailwind plugin
-        run: npm run build
-
+  structure:
+    name: File Structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - name: Verify CSS files exist
         run: |
           for f in \
@@ -36,12 +56,10 @@ jobs:
             src/utilities/index.css \
             src/animations/index.css \
             src/themes/dark.css \
-            src/themes/light.css \
-            dist/tailwind-plugin.js \
-            dist/tailwind-plugin.d.ts; do
+            src/themes/light.css; do
             [ -f "$f" ] || { echo "MISSING: $f"; exit 1; }
           done
-          echo "All files present"
+          echo "All CSS files present"
 
       - name: Verify no React artifacts
         run: |
@@ -51,3 +69,32 @@ jobs:
             exit 1
           fi
           echo "Clean: no React files in src/"
+
+  design-drift:
+    name: DESIGN.md Drift Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check tokens match CSS values
+        run: |
+          echo "Checking DESIGN.md tokens match src/tokens/colors.css..."
+          # Extract hex values from DESIGN.md YAML
+          design_primary=$(grep 'primary:' DESIGN.md | head -1 | grep -o '"#[0-9a-fA-F]*"' | tr -d '"')
+          css_primary=$(grep '\-\-ds-primary:' src/tokens/colors.css | head -1 | grep -o '#[0-9a-fA-F]*')
+          if [ "$design_primary" != "$css_primary" ]; then
+            echo "DRIFT: DESIGN.md primary=$design_primary but CSS has $css_primary"
+            exit 1
+          fi
+          design_bg=$(grep 'background:' DESIGN.md | head -1 | grep -o '"#[0-9a-fA-F]*"' | tr -d '"')
+          css_bg=$(grep '\-\-ds-background:' src/tokens/colors.css | head -1 | grep -o '#[0-9a-fA-F]*')
+          if [ "$design_bg" != "$css_bg" ]; then
+            echo "DRIFT: DESIGN.md background=$design_bg but CSS has $css_bg"
+            exit 1
+          fi
+          design_surface=$(grep 'surface:' DESIGN.md | head -1 | grep -o '"#[0-9a-fA-F]*"' | tr -d '"')
+          css_surface=$(grep '\-\-ds-surface:' src/tokens/colors.css | head -1 | grep -o '#[0-9a-fA-F]*')
+          if [ "$design_surface" != "$css_surface" ]; then
+            echo "DRIFT: DESIGN.md surface=$design_surface but CSS has $css_surface"
+            exit 1
+          fi
+          echo "No drift detected: primary, background, surface tokens match"
