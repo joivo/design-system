@@ -164,8 +164,13 @@ app.innerHTML = `
   <!-- PIXEL WAVES -->
   <section class="dev-section">
     <h2 class="ds-prefix">Pixel Waves</h2>
-    <div class="ds-pixel-waves" style="background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
-      <p style="color: var(--ds-text-muted);" class="ds-mono">.ds-pixel-waves -- 8px grid wave texture at bottom</p>
+    <div class="dev-swatch-grid">
+      <div class="ds-pixel-waves" style="background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
+        <p style="color: var(--ds-text-muted);" class="ds-mono">.ds-pixel-waves (static)</p>
+      </div>
+      <div class="ds-pixel-waves ds-pixel-waves-animated" style="background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
+        <p style="color: var(--ds-text-muted);" class="ds-mono">.ds-pixel-waves-animated</p>
+      </div>
     </div>
   </section>
 

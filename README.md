@@ -150,7 +150,8 @@ All tokens are CSS custom properties prefixed with `--ds-`.
 | `ds-kbd` | Keyboard shortcut display |
 | `ds-row-hover` | Row highlight on hover |
 | `ds-cursor-blink` | Blinking cursor `\|` |
-| `ds-pixel-waves` | 8px grid pixel wave texture at element bottom |
+| `ds-pixel-waves` | 8px grid pixel wave texture at element bottom (static) |
+| `ds-pixel-waves-animated` | Add to `ds-pixel-waves` for slow horizontal drift animation |
 | `ds-bioluminescent` | Decorative accent dot with subtle glow (dark only) |
 
 ## Animations

@@ -29,6 +29,17 @@
     -webkit-mask-size: 100% 100%;
   }
 
+  /* Animated variant: slow horizontal drift like ocean current */
+  .ds-pixel-waves-animated::after {
+    animation: ds-wave-drift 8s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ds-pixel-waves-animated::after {
+      animation: none;
+    }
+  }
+
   [data-theme='light'] .ds-pixel-waves::after {
     background-image:
       linear-gradient(to right,
@@ -40,4 +51,9 @@
         color-mix(in srgb, var(--ds-primary) 5%, transparent) 32px
       );
   }
+}
+
+@keyframes ds-wave-drift {
+  from { background-position: 0 0; }
+  to { background-position: 32px 0; }
 }
