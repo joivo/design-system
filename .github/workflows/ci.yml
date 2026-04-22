@@ -18,7 +18,15 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+
+      - name: Lint CSS
+        run: npm run lint
+
+      - name: Validate DESIGN.md
+        run: npx --yes @google/design.md lint DESIGN.md
+
+      - name: Build Tailwind plugin
+        run: npm run build
 
       - name: Verify CSS files exist
         run: |

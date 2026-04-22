@@ -1,5 +1,6 @@
 /* Design System - Pixel Wave Texture */
 
+/* stylelint-disable property-no-vendor-prefix */
 @layer utilities {
   .ds-pixel-waves {
     position: relative;
@@ -15,7 +16,7 @@
     pointer-events: none;
     background-image:
       linear-gradient(to right,
-        transparent 0px, transparent 8px,
+        transparent 0, transparent 8px,
         color-mix(in srgb, var(--ds-primary) 6%, transparent) 8px,
         color-mix(in srgb, var(--ds-primary) 6%, transparent) 16px,
         transparent 16px, transparent 24px,
@@ -23,10 +24,10 @@
         color-mix(in srgb, var(--ds-primary) 4%, transparent) 32px
       );
     background-size: 32px 8px;
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='120'%3E%3Cpath d='M0,80 Q80,40 160,60 Q240,80 320,50 Q400,20 480,55 Q560,90 640,70 L640,120 L0,120Z' fill='white'/%3E%3C/svg%3E");
-    mask-size: 100% 100%;
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='120'%3E%3Cpath d='M0,80 Q80,40 160,60 Q240,80 320,50 Q400,20 480,55 Q560,90 640,70 L640,120 L0,120Z' fill='white'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='120'%3E%3Cpath d='M0,80 Q80,40 160,60 Q240,80 320,50 Q400,20 480,55 Q560,90 640,70 L640,120 L0,120Z' fill='white'/%3E%3C/svg%3E");
     -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   /* Animated variant: slow horizontal drift like ocean current */
@@ -43,7 +44,7 @@
   [data-theme='light'] .ds-pixel-waves::after {
     background-image:
       linear-gradient(to right,
-        transparent 0px, transparent 8px,
+        transparent 0, transparent 8px,
         color-mix(in srgb, var(--ds-primary) 8%, transparent) 8px,
         color-mix(in srgb, var(--ds-primary) 8%, transparent) 16px,
         transparent 16px, transparent 24px,
@@ -52,8 +53,14 @@
       );
   }
 }
+/* stylelint-enable property-no-vendor-prefix */
 
 @keyframes ds-wave-drift {
-  from { background-position: 0 0; }
-  to { background-position: 32px 0; }
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 32px 0;
+  }
 }

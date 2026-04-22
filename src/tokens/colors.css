@@ -40,7 +40,7 @@
   [data-theme='light'] {
     /* Light Theme: Day Beach */
     --ds-background: #faf6f0;
-    --ds-surface: #ffffff;
+    --ds-surface: #fff;
     --ds-surface-alt: #f0e8d8;
     --ds-text: #2c3e50;
     --ds-text-muted: #8a9aaa;
@@ -52,7 +52,6 @@
     --ds-warning: #f57f17;
     --ds-error: #c62828;
     --ds-info: #0277bd;
-
     --ds-income: #2e7d32;
     --ds-expense: #c62828;
 
@@ -62,7 +61,6 @@
     --ds-github-contrib-medium: #40c463;
     --ds-github-contrib-high: #30a14e;
     --ds-github-contrib-very-high: #216e39;
-
     --ds-chart-1: #0077a8;
     --ds-chart-2: #2e7d32;
     --ds-chart-3: #f57f17;
