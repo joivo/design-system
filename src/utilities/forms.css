@@ -1,0 +1,72 @@
+/* Design System - Form Utilities */
+
+@layer utilities {
+  /* -- Base input --------------------------------------------------------- */
+  .ds-input {
+    display: block;
+    width: 100%;
+    padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+    background: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-radius: var(--ds-radius-md);
+    color: var(--ds-text);
+    font-size: 0.875rem;
+    font-family: inherit;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color var(--ds-transition-fast) ease,
+                box-shadow var(--ds-transition-fast) ease;
+  }
+
+  .ds-input::placeholder {
+    color: var(--ds-text-muted);
+  }
+
+  .ds-input:focus {
+    border-color: var(--ds-border-focus);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--ds-primary) 25%, transparent);
+  }
+
+  .ds-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* -- Compact input (table cells) ---------------------------------------- */
+  .ds-input--sm {
+    padding: var(--ds-spacing-xs) var(--ds-spacing-sm);
+    font-size: 0.8125rem;
+  }
+
+  /* -- Select ------------------------------------------------------------- */
+  .ds-select {
+    appearance: none;
+    padding-right: var(--ds-spacing-xl);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233a6a80' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--ds-spacing-sm) center;
+    background-size: 1rem;
+    cursor: pointer;
+  }
+
+  /* -- Field wrapper ------------------------------------------------------ */
+  .ds-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-spacing-xs);
+  }
+
+  .ds-field__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ds-text-muted);
+  }
+
+  .ds-field__hint {
+    font-size: 0.6875rem;
+    color: var(--ds-text-muted);
+    line-height: 1.4;
+  }
+}
