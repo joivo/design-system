@@ -21,7 +21,12 @@
 
   .ds-btn:hover { border-color: var(--ds-primary); }
   .ds-btn:active { transform: translateY(1px); }
-  .ds-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .ds-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
 
   .ds-btn--primary {
     background: var(--ds-primary);
