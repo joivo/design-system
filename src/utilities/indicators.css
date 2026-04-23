@@ -14,24 +14,4 @@
   .ds-dot-error { background-color: var(--ds-error); }
   .ds-dot-primary { background-color: var(--ds-primary); }
 
-  .ds-bioluminescent {
-    position: relative;
-  }
-
-  .ds-bioluminescent::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--ds-primary);
-    box-shadow: 0 0 6px color-mix(in srgb, var(--ds-primary) 30%, transparent);
-    top: 4px;
-    right: 4px;
-    pointer-events: none;
-  }
-
-  [data-theme='light'] .ds-bioluminescent::after {
-    box-shadow: none;
-  }
 }
