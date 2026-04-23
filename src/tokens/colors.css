@@ -35,18 +35,6 @@
     --ds-chart-10: #7a9a65;
   }
 
-  /* Dark + Surf */
-  :root[data-surf],
-  [data-surf] {
-    --ds-primary: #d4b483;
-    --ds-secondary: #b89a6a;
-    --ds-text-muted: #8a8580;
-    --ds-border: #3d3833;
-    --ds-border-focus: #d4b483;
-    --ds-chart-1: #d4b483;
-    --ds-chart-5: #b89a6a;
-  }
-
   /* Light + Neutral */
   [data-theme='light'] {
     --ds-background: #fff;
@@ -79,6 +67,17 @@
     --ds-chart-8: #546e7a;
     --ds-chart-9: #00838f;
     --ds-chart-10: #558b2f;
+  }
+
+  /* Dark + Surf (must come after light-neutral to win cascade) */
+  :root[data-surf] {
+    --ds-primary: #d4b483;
+    --ds-secondary: #b89a6a;
+    --ds-text-muted: #8a8580;
+    --ds-border: #3d3833;
+    --ds-border-focus: #d4b483;
+    --ds-chart-1: #d4b483;
+    --ds-chart-5: #b89a6a;
   }
 
   /* Light + Surf */
