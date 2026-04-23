@@ -81,25 +81,6 @@
       border-color: var(--ds-primary);
     }
 
-    .theme-toggle {
-      position: fixed;
-      top: var(--ds-spacing-md);
-      right: var(--ds-spacing-md);
-      z-index: 100;
-      padding: var(--ds-spacing-sm) var(--ds-spacing-md);
-      background-color: var(--ds-surface);
-      border: 1px solid var(--ds-border);
-      border-radius: var(--ds-radius-md);
-      color: var(--ds-text);
-      cursor: pointer;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--ds-primary);
-    }
-
     .inline-flex {
       display: inline-flex;
       align-items: center;
@@ -120,13 +101,16 @@
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <div style="position: fixed; top: var(--ds-spacing-md); right: var(--ds-spacing-md); z-index: 100; display: flex; gap: var(--ds-spacing-xs);">
+    <button class="ds-btn" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="ds-btn" onclick="toggleSurf()">Toggle Surf</button>
+  </div>
 
   <div class="ds-container" style="padding-top: var(--ds-spacing-2xl); padding-bottom: var(--ds-spacing-2xl);">
 
-    <h1>@personal/design-system</h1>
+    <h1>@joivo/design-system</h1>
     <p style="color: var(--ds-text-muted); margin-bottom: var(--ds-spacing-2xl);">
-      v0.2.0 &mdash; Framework-agnostic design tokens, utilities, and animations
+      v0.4.0 -- Brutalist Shore. Two-axis theming: light/dark + neutral/surf.
     </p>
 
     <!-- COLORS -->
@@ -219,17 +203,16 @@
     <!-- TYPOGRAPHY -->
     <section class="showcase-section">
       <h2>Typography</h2>
-      <div class="ds-panel" style="padding: var(--ds-spacing-lg);">
-        <h1>h1 &mdash; Inter 1.75rem</h1>
-        <h2>h2 &mdash; Inter 1.375rem</h2>
-        <h3>h3 &mdash; Inter 1.125rem</h3>
-        <h4>h4 &mdash; Inter 1rem</h4>
-        <h5>h5 &mdash; Inter 0.875rem</h5>
-        <h6>h6 &mdash; Inter 0.8125rem</h6>
+      <div style="border: 1px solid var(--ds-border); padding: var(--ds-spacing-lg);">
+        <h1>h1 -- JetBrains Mono 1.75rem</h1>
+        <h2>h2 -- JetBrains Mono 1.375rem</h2>
+        <h3>h3 -- JetBrains Mono 1.125rem</h3>
+        <h4>h4 -- JetBrains Mono 1rem</h4>
+        <h5>h5 -- JetBrains Mono 0.875rem</h5>
+        <h6>h6 -- JetBrains Mono 0.8125rem</h6>
         <hr class="ds-separator">
-        <p>Body text &mdash; Inter 15px. The quick brown fox jumps over the lazy dog.</p>
-        <p style="color: var(--ds-text-muted);">Muted text &mdash; secondary information and labels.</p>
-        <p class="ds-mono">Mono accent (.ds-mono) &mdash; JetBrains Mono for code, nav, labels.</p>
+        <p>Body text -- JetBrains Mono 15px. The quick brown fox jumps over the lazy dog.</p>
+        <p style="color: var(--ds-text-muted);">Muted text -- secondary information and labels.</p>
       </div>
     </section>
 
@@ -273,25 +256,20 @@
     <section class="showcase-section">
       <h2>Utility Classes</h2>
 
-      <h3 style="margin-bottom: var(--ds-spacing-md);">Panels</h3>
-      <div class="showcase-grid" style="margin-bottom: var(--ds-spacing-lg);">
-        <div class="ds-panel" style="padding: var(--ds-spacing-lg);">
-          <code>.ds-panel</code>
-        </div>
-        <div class="ds-panel-accent" style="padding: var(--ds-spacing-lg);">
-          <code>.ds-panel-accent</code>
-        </div>
-        <div class="ds-glass ds-panel" style="padding: var(--ds-spacing-lg);">
-          <code>.ds-glass</code>
-        </div>
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Bracket Navigation</h3>
+      <div style="margin-bottom: var(--ds-spacing-lg);">
+        <nav class="ds-nav-bracket">
+          <a href="#">WRITINGS</a>
+          <a href="#">PROJECTS</a>
+          <a href="#">ABOUT</a>
+          <a href="#">CONTACT</a>
+        </nav>
       </div>
 
-      <h3 style="margin-bottom: var(--ds-spacing-md);">Text Effects</h3>
+      <h3 style="margin-bottom: var(--ds-spacing-md);">Text Decorators</h3>
       <div class="stack" style="margin-bottom: var(--ds-spacing-lg);">
-        <p class="ds-text-glow" style="font-size: 1.5rem;">Glowing text (.ds-text-glow)</p>
         <p class="ds-prefix">Prefixed text (.ds-prefix)</p>
         <p><span class="ds-bracket">Bracketed text</span> (.ds-bracket)</p>
-        <p class="ds-crt-glow ds-panel" style="padding: var(--ds-spacing-md); display: inline-block;">CRT glow (.ds-crt-glow)</p>
       </div>
 
       <h3 style="margin-bottom: var(--ds-spacing-md);">Indicators</h3>
@@ -315,7 +293,7 @@
       </div>
 
       <h3 style="margin-bottom: var(--ds-spacing-md);">Scrollbar</h3>
-      <div class="ds-panel ds-custom-scrollbar" style="max-height: 100px; overflow-y: auto; padding: var(--ds-spacing-md); max-width: 300px;">
+      <div class="ds-custom-scrollbar" style="max-height: 100px; overflow-y: auto; padding: var(--ds-spacing-md); max-width: 300px; border: 1px solid var(--ds-border);">
         <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p>
         <p>Line 5</p><p>Line 6</p><p>Line 7</p><p>Line 8</p>
       </div>
@@ -406,22 +384,14 @@
       </div>
     </section>
 
-    <!-- PIXEL WAVES -->
+    <!-- ASCII WAVES -->
     <section class="showcase-section">
-      <h2>Pixel Waves</h2>
-      <div class="ds-pixel-waves" style="background-color: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
-        <p style="color: var(--ds-text-muted); font-family: 'JetBrains Mono', monospace; font-size: 11px;">.ds-pixel-waves</p>
-      </div>
-    </section>
-
-    <!-- BIOLUMINESCENT -->
-    <section class="showcase-section">
-      <h2>Bioluminescent</h2>
-      <div style="display: flex; gap: var(--ds-spacing-md);">
-        <div class="ds-panel ds-bioluminescent" style="padding: var(--ds-spacing-lg); width: 200px;">
-          <code style="font-size: 11px;">.ds-bioluminescent</code>
-          <p style="color: var(--ds-text-muted); font-size: 11px; margin-top: 4px;">Accent dot with glow</p>
-        </div>
+      <h2>ASCII Waves</h2>
+      <div class="ds-ascii-waves" style="border: 1px solid var(--ds-border);">
+        <span>~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_</span>
+        <span>_.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_~.~^~.~_</span>
+        <span>~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_~.~^~_</span>
+        <span>.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_</span>
       </div>
     </section>
 
@@ -447,9 +417,19 @@
   <script>
     function toggleTheme() {
       const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next === 'dark' ? '' : next);
-      if (next === 'dark') document.documentElement.removeAttribute('data-theme');
+      if (current === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+
+    function toggleSurf() {
+      if (document.documentElement.hasAttribute('data-surf')) {
+        document.documentElement.removeAttribute('data-surf');
+      } else {
+        document.documentElement.setAttribute('data-surf', '');
+      }
     }
 
     function activateSegment(btn) {
@@ -461,7 +441,7 @@
     function replay(container, className) {
       const el = container.querySelector('div');
       el.classList.remove(className);
-      void el.offsetWidth; // force reflow
+      void el.offsetWidth;
       el.classList.add(className);
     }
   </script>
