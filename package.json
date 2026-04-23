@@ -1,6 +1,6 @@
 {
   "name": "@joivo/design-system",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "type": "module",
   "description": "Framework-agnostic design tokens, utilities, and animations",
   "exports": {
