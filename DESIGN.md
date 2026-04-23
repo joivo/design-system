@@ -1,73 +1,69 @@
 ---
-version: alpha
-name: Deep Sea Terminal
+version: "0.4.0"
+name: Brutalist Shore
 description: >
-  TUI-first design system with ocean accents. Same ocean, different hour.
-  Dark theme is the Night Dive. Light theme is the Day Beach.
+  High-contrast, monospace-first, border-driven design system.
+  Two-axis theming: light/dark + neutral/surf.
+  Ocean personality lives in the accent color, not the background.
 colors:
-  background: "#0a1520"
-  surface: "#152838"
-  surface-alt: "#102030"
-  text: "#b0c4d4"
-  text-muted: "#3a6a80"
-  primary: "#00bcd4"
-  secondary: "#80cbc4"
-  border: "#264a60"
-  border-focus: "#3a6a80"
-  success: "#00e676"
-  warning: "#ffc107"
-  error: "#ff5252"
-  info: "#29b6f6"
-  income: "#00e676"
-  expense: "#ff5252"
-  background-light: "#faf6f0"
-  surface-light: "#ffffff"
-  surface-alt-light: "#f0e8d8"
-  text-light: "#2c3e50"
-  text-muted-light: "#8a9aaa"
-  primary-light: "#0077a8"
-  secondary-light: "#5ba4b5"
-  border-light: "#e0d4b8"
-  border-focus-light: "#c4b896"
+  background: "#000"
+  surface: "#000"
+  surface-alt: "#000"
+  text: "#e0e0e0"
+  text-muted: "#999"
+  primary: "#fff"
+  secondary: "#ccc"
+  border: "#555"
+  border-focus: "#fff"
+  success: "#4caf7d"
+  warning: "#d4a030"
+  error: "#cf5555"
+  info: "#5a9ec4"
+  income: "#4caf7d"
+  expense: "#cf5555"
+  background-light: "#fff"
+  surface-light: "#fff"
+  surface-alt-light: "#fff"
+  text-light: "#1a1a1a"
+  text-muted-light: "#666"
+  primary-light: "#000"
+  secondary-light: "#333"
+  border-light: "#999"
+  border-focus-light: "#000"
   success-light: "#2e7d32"
   warning-light: "#f57f17"
   error-light: "#c62828"
   info-light: "#0277bd"
 typography:
   h1:
-    fontFamily: Inter
+    fontFamily: JetBrains Mono
     fontSize: 1.75rem
     fontWeight: 600
     lineHeight: 1.3
     letterSpacing: -0.02em
   h2:
-    fontFamily: Inter
+    fontFamily: JetBrains Mono
     fontSize: 1.375rem
     fontWeight: 600
     lineHeight: 1.3
     letterSpacing: -0.02em
   h3:
-    fontFamily: Inter
+    fontFamily: JetBrains Mono
     fontSize: 1.125rem
     fontWeight: 600
     lineHeight: 1.3
     letterSpacing: -0.02em
   body:
-    fontFamily: Inter
+    fontFamily: JetBrains Mono
     fontSize: 15px
     lineHeight: 1.6
     letterSpacing: 0.01em
-  mono:
-    fontFamily: JetBrains Mono
-    fontSize: 13px
-    lineHeight: 1.6
-    letterSpacing: 0.01em
 rounded:
-  none: 0px
-  sm: 2px
-  md: 4px
-  lg: 6px
-  xl: 8px
+  none: 0
+  sm: 0
+  md: 0
+  lg: 0
+  xl: 0
 spacing:
   xs: 0.25rem
   sm: 0.5rem
@@ -76,57 +72,38 @@ spacing:
   xl: 1.5rem
   2xl: 2rem
 components:
-  panel:
-    backgroundColor: "{colors.surface}"
-    rounded: "{rounded.md}"
-  panel-accent:
-    backgroundColor: "{colors.surface}"
-    rounded: "{rounded.md}"
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.background}"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.md}"
     padding: 12px
 ---
 
 ## Overview
 
-Deep Sea Terminal. TUI-first structure with ocean accents.
+Brutalist Shore. High-contrast, monospace-first, border-driven.
 
-The design system operates on a day/night duality: the dark theme is a "Night Dive" into twilight ocean depths, the light theme is a "Day Beach" under sunlit parchment skies. Toggling themes feels like a time-of-day shift at the sea.
-
-Structure comes from monospace accents (navigation, code, labels, terminal prefixes), sharp borders, dense layouts, and minimal decoration. The ocean identity comes through the color palette, pixel wave textures, and subtle bioluminescent glow effects.
+Two-axis theming: light/dark controls the base palette, surf mode overlays warm sand accent. The ocean identity lives in the accent color choice, not the background. Structure comes from 1px borders, full monospace typography, dense layouts, and ASCII wave textures.
 
 ## Colors
 
-The palette is rooted in ocean depth for dark and sunlit shore for light.
+Binary contrast as the foundation. Four theme combos via two axes:
 
-**Dark theme (Night Dive):**
-- **Primary (#00bcd4):** Bioluminescent teal. The accent that catches light in the deep.
-- **Secondary (#80cbc4):** Seafoam. Softer complement for secondary elements.
-- **Background (#0a1520):** Deep water. Near-black with blue undertone.
-- **Surface (#152838):** Reef shelf. Panels and cards float here.
-- **Text (#b0c4d4):** Moonlit foam. Readable against the dark depth.
-- **Border (#264a60):** Pressure line. Subtle structural separation.
+- **Dark + Neutral:** Black bg, white text/accent, grey borders. Maximum contrast.
+- **Dark + Surf:** Black bg, warm sand (#d4b483) accent, warm borders. Beach at night.
+- **Light + Neutral:** White bg, black text/accent, grey borders. Clean binary.
+- **Light + Surf:** Parchment (#faf6f0) bg, dark sand (#8b6914) accent, warm borders.
 
-**Light theme (Day Beach):**
-- **Primary (#0077a8):** Ocean blue. The sea seen from shore.
-- **Secondary (#5ba4b5):** Shallow water. Lighter teal for accents.
-- **Background (#faf6f0):** Warm parchment. Sun-bleached sand tone.
-- **Surface (#ffffff):** White sand. Clean card backgrounds.
-- **Text (#2c3e50):** Wet stone. High readability.
-- **Border (#e0d4b8):** Shell line. Warm structural separation.
+All text/bg pairings pass WCAG AA (4.5:1 minimum). Status colors (success, warning, error, info) remain constant across all combos.
 
 ## Typography
 
-Sans body with mono accents. Body text uses Inter 15px for readability. TUI personality comes from JetBrains Mono used selectively.
+Full monospace. JetBrains Mono everywhere.
 
-- **Body:** Inter, 15px. Paragraphs, descriptions, blog content.
-- **Headings:** Inter, semibold. h1 at 1.75rem down to h6 at 0.8125rem.
-- **Mono accents:** JetBrains Mono, 13px. Navigation links, terminal prefixes, code, labels, timestamps, keyboard shortcuts, metadata.
-- **Form inputs:** Inter, 14px.
-
-The `.ds-mono` utility applies monospace. The `.ds-sans` utility applies sans-serif. Body default is sans-serif.
+- **Body:** JetBrains Mono, 15px, line-height 1.6.
+- **Headings:** JetBrains Mono, semibold. h1 at 1.75rem down to h6 at 0.8125rem.
+- **Form inputs:** JetBrains Mono, 14px.
+- No sans-serif in the system. `ds-mono` utility kept for backward compat (no-op).
 
 ## Layout & Spacing
 
@@ -138,39 +115,35 @@ Border radius is sharp by default: 0px to 8px maximum. No rounded pills, no larg
 
 ## Shapes
 
-Sharp corners throughout. The radius scale tops out at 8px (xl). Buttons, panels, badges, and inputs all use sm (2px) or md (4px) radius. No `rounded-full` or large radii anywhere.
+Zero corners. All radius tokens are 0. No rounded elements anywhere.
 
 ## Components
 
-**Panels** (`ds-panel`, `ds-panel-accent`): Surface background with 1px border and md radius. Accent variant adds a primary left border.
+**Bracket navigation** (`ds-nav-bracket`): Wraps child links in `[LINK]` brackets with hover underline. The primary navigation pattern.
 
-**Glass** (`ds-glass`): 70% background opacity with backdrop blur. Use sparingly.
-
-**Text effects** (`ds-text-glow`, `ds-crt-glow`): Subtle glow at 20% opacity in dark theme. No glow in light theme (daylight does not glow).
-
-**Pixel waves** (`ds-pixel-waves`, `ds-pixel-waves-animated`): 8px grid pixel art wave silhouette at element bottom. Static by default, animated with slow horizontal drift. Respects prefers-reduced-motion.
-
-**Bioluminescent** (`ds-bioluminescent`): 4px decorative dot with glow. Dark only.
+**ASCII waves** (`ds-ascii-waves`): Breathing drift animation using tilde/dot/caret/underscore characters. Four rows at independent speeds. Respects prefers-reduced-motion.
 
 **Terminal decorators** (`ds-prefix`, `ds-bracket`, `ds-cursor-blink`): TUI-style text prefixes and indicators.
 
 **Interactive** (`ds-kbd`, `ds-row-hover`, `ds-separator`): Keyboard shortcut display, row highlights, divider lines.
 
+**Forms** (`ds-btn`, `ds-input`, `ds-select`, `ds-field`, `ds-table`, `ds-segmented`): Brutalist form elements with zero radius, solid fills, visible borders.
+
 ## Do's and Don'ts
 
 **Do:**
-- Use `ds-mono` on navigation, labels, timestamps, and metadata
-- Use `ds-panel` instead of manually composing bg + border + radius
+- Use `ds-nav-bracket` for navigation links
+- Use `ds-separator` and `ds-grid-bordered` for layout structure
 - Use `ds-prefix` for terminal-style section headings
-- Use semantic color tokens (`text-primary`, `bg-surface`) instead of hardcoded hex
-- Keep borders at 1px, subtle, using border tokens
-- Use `text-background` for inverted text on primary backgrounds
+- Use semantic color tokens (`--ds-primary`, `--ds-background`) instead of hardcoded hex
+- Keep borders at 1px using `--ds-border` token
+- Use `data-surf` attribute to toggle warm sand mode
 
 **Don't:**
-- Use `rounded-full`, `rounded-2xl`, or `rounded-xl` anywhere
-- Use `bg-gradient-to-*` for backgrounds (solid colors only)
-- Use `backdrop-blur-*` for glassmorphism effects on content areas
-- Use `whileHover={{ scale }}` or `whileTap={{ scale }}` (TUI does not bounce)
-- Use `text-white` hardcoded (breaks in light theme)
-- Use emojis or decorative icons in content
-- Use em dashes or AI-isms in copy
+- Use `rounded-full`, `rounded-2xl`, or any border-radius
+- Use gradients, shadows, or backdrop-blur
+- Use background color shifts for panel elevation (borders only)
+- Use `whileHover={{ scale }}` or `whileTap={{ scale }}`
+- Hardcode color values (use tokens)
+- Use emojis or decorative icons
+- Use sans-serif fonts
