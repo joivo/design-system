@@ -1,7 +1,5 @@
-/* Design System - All Utilities */
+/* Design System - All Utilities (Brutalist Shore v0.4.0) */
 
-@import './panel.css';
-@import './glass.css';
 @import './text.css';
 @import './indicators.css';
 @import './layout.css';
@@ -11,4 +9,5 @@
 @import './buttons.css';
 @import './tables.css';
 @import './segmented.css';
-@import './waves.css';
+@import './nav-bracket.css';
+@import './ascii-waves.css';
