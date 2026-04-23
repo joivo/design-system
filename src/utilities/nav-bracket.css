@@ -1,3 +1,42 @@
 /* Design System - Bracket Navigation (Brutalist Shore v0.4.0) */
 
-/* Implemented in Task 8 */
+@layer utilities {
+  .ds-nav-bracket {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .ds-nav-bracket a,
+  .ds-nav-bracket button {
+    color: var(--ds-text);
+    text-decoration: none;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .ds-nav-bracket a::before,
+  .ds-nav-bracket button::before {
+    content: '[';
+    color: var(--ds-text-muted);
+    margin-right: 0.25em;
+  }
+
+  .ds-nav-bracket a::after,
+  .ds-nav-bracket button::after {
+    content: ']';
+    color: var(--ds-text-muted);
+    margin-left: 0.25em;
+  }
+
+  .ds-nav-bracket a:hover,
+  .ds-nav-bracket button:hover {
+    color: var(--ds-primary);
+    text-decoration: underline;
+  }
+}
