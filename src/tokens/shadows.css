@@ -1,10 +1,10 @@
-/* Design System - Shadow Tokens */
+/* Design System - Shadow Tokens (Brutalist Shore v0.4.0) */
 
 @layer base {
   :root {
-    --ds-shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
-    --ds-shadow-md: 0 2px 4px rgb(0 0 0 / 40%);
-    --ds-shadow-lg: 0 4px 8px rgb(0 0 0 / 50%);
-    --ds-shadow-xl: 0 8px 16px rgb(0 0 0 / 60%);
+    --ds-shadow-sm: none;
+    --ds-shadow-md: none;
+    --ds-shadow-lg: none;
+    --ds-shadow-xl: none;
   }
 }
