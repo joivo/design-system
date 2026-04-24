@@ -1,11 +1,11 @@
-/* Design System - Border Radius Tokens */
+/* Design System - Border Radius Tokens (Brutalist Shore v0.4.0) */
 
 @layer base {
   :root {
-    --ds-radius-none: 0px;
-    --ds-radius-sm: 2px;
-    --ds-radius-md: 4px;
-    --ds-radius-lg: 6px;
-    --ds-radius-xl: 8px;
+    --ds-radius-none: 0;
+    --ds-radius-sm: 0;
+    --ds-radius-md: 0;
+    --ds-radius-lg: 0;
+    --ds-radius-xl: 0;
   }
 }

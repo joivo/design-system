@@ -1,4 +1,4 @@
-/* Design System - Interactive Utilities */
+/* Design System - Interactive Utilities (Brutalist Shore v0.4.0) */
 
 @layer utilities {
   .ds-kbd {
@@ -10,7 +10,7 @@
     font-size: 11px;
     line-height: 1.4;
     color: var(--ds-text-muted);
-    background-color: var(--ds-surface-alt);
+    background-color: var(--ds-background);
     border: 1px solid var(--ds-border);
     border-radius: var(--ds-radius-sm);
   }
@@ -28,13 +28,5 @@
     animation: ds-blink 1s step-end infinite;
     color: var(--ds-primary);
     margin-left: 2px;
-  }
-
-  .ds-crt-glow {
-    box-shadow: 0 0 8px 1px color-mix(in srgb, var(--ds-primary) 15%, transparent);
-  }
-
-  [data-theme='light'] .ds-crt-glow {
-    box-shadow: 0 0 4px 0 color-mix(in srgb, var(--ds-primary) 10%, transparent);
   }
 }

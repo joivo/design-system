@@ -1,4 +1,4 @@
-/* Design System - Table Utilities */
+/* Design System - Table Utilities (Brutalist Shore v0.4.0) */
 
 @layer utilities {
   /* -- Scrollable wrapper ------------------------------------------------- */
@@ -18,7 +18,7 @@
   .ds-table th {
     text-align: left;
     padding: var(--ds-spacing-sm) var(--ds-spacing-md);
-    background: var(--ds-surface-alt);
+    background: var(--ds-background);
     color: var(--ds-text-muted);
     font-weight: 600;
     font-size: 0.75rem;

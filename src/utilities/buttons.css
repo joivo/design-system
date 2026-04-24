@@ -1,35 +1,26 @@
-/* Design System - Button Utilities */
+/* Design System - Button Utilities (Brutalist Shore v0.4.0) */
 
 @layer utilities {
-  /* -- Base button -------------------------------------------------------- */
   .ds-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--ds-spacing-xs);
     padding: var(--ds-spacing-sm) var(--ds-spacing-md);
-    border: 1px solid transparent;
+    border: 1px solid var(--ds-border);
     border-radius: var(--ds-radius-md);
     font-size: 0.875rem;
     font-weight: 500;
     font-family: inherit;
     line-height: 1.5;
     color: var(--ds-text);
-    background: var(--ds-surface);
+    background: var(--ds-background);
     cursor: pointer;
-    transition: background var(--ds-transition-fast) ease,
-                border-color var(--ds-transition-fast) ease,
-                transform 80ms ease;
     user-select: none;
   }
 
-  .ds-btn:hover {
-    background: var(--ds-surface-alt);
-  }
-
-  .ds-btn:active {
-    transform: translateY(1px);
-  }
+  .ds-btn:hover { border-color: var(--ds-primary); }
+  .ds-btn:active { transform: translateY(1px); }
 
   .ds-btn:disabled {
     opacity: 0.5;
@@ -37,29 +28,25 @@
     transform: none;
   }
 
-  /* -- Primary ------------------------------------------------------------ */
   .ds-btn--primary {
-    background: color-mix(in srgb, var(--ds-primary) 20%, transparent);
-    border-color: color-mix(in srgb, var(--ds-primary) 35%, transparent);
+    background: var(--ds-primary);
+    border-color: var(--ds-primary);
+    color: var(--ds-background);
+  }
+
+  .ds-btn--primary:hover { opacity: 0.85; }
+
+  .ds-btn--secondary {
+    background: transparent;
+    border-color: var(--ds-primary);
     color: var(--ds-primary);
   }
 
-  .ds-btn--primary:hover {
-    background: color-mix(in srgb, var(--ds-primary) 30%, transparent);
-  }
-
-  /* -- Secondary ---------------------------------------------------------- */
-  .ds-btn--secondary {
-    background: color-mix(in srgb, var(--ds-secondary) 15%, transparent);
-    border-color: color-mix(in srgb, var(--ds-secondary) 30%, transparent);
-    color: var(--ds-secondary);
-  }
-
   .ds-btn--secondary:hover {
-    background: color-mix(in srgb, var(--ds-secondary) 25%, transparent);
+    background: var(--ds-primary);
+    color: var(--ds-background);
   }
 
-  /* -- Ghost -------------------------------------------------------------- */
   .ds-btn--ghost {
     background: transparent;
     border-color: transparent;
@@ -67,22 +54,21 @@
   }
 
   .ds-btn--ghost:hover {
-    background: var(--ds-surface);
+    border-color: var(--ds-border);
     color: var(--ds-text);
   }
 
-  /* -- Danger ------------------------------------------------------------- */
   .ds-btn--danger {
-    background: color-mix(in srgb, var(--ds-error) 13%, transparent);
-    border-color: color-mix(in srgb, var(--ds-error) 35%, transparent);
+    background: transparent;
+    border-color: var(--ds-error);
     color: var(--ds-error);
   }
 
   .ds-btn--danger:hover {
-    background: color-mix(in srgb, var(--ds-error) 22%, transparent);
+    background: var(--ds-error);
+    color: var(--ds-background);
   }
 
-  /* -- Icon-only ---------------------------------------------------------- */
   .ds-btn--icon {
     padding: var(--ds-spacing-sm);
     min-width: unset;

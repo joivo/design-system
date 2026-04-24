@@ -1,39 +1,33 @@
-/* Design System - Color Tokens */
+/* Design System - Color Tokens (Brutalist Shore v0.4.0) */
 
 @layer base {
+  /* Dark + Neutral (default) */
   :root {
-    /* Dark Theme: Night Dive */
-    --ds-background: #0c0e13;
-    --ds-surface: #161a22;
-    --ds-surface-alt: #11141a;
-    --ds-text: #c4cad4;
-    --ds-text-muted: #525a66;
-    --ds-primary: #5eaab5;
-    --ds-secondary: #7a9ea8;
-    --ds-border: #252a33;
-    --ds-border-focus: #3a4250;
+    --ds-background: #000;
+    --ds-surface: #000;
+    --ds-surface-alt: #000;
+    --ds-text: #e0e0e0;
+    --ds-text-muted: #999;
+    --ds-primary: #fff;
+    --ds-secondary: #ccc;
+    --ds-border: #555;
+    --ds-border-focus: #fff;
     --ds-success: #4caf7d;
     --ds-warning: #d4a030;
     --ds-error: #cf5555;
     --ds-info: #5a9ec4;
-
-    /* Semantic finance colors */
     --ds-income: #4caf7d;
     --ds-expense: #cf5555;
-
-    /* GitHub contribution colors */
     --ds-github-contrib-none: #161b22;
     --ds-github-contrib-low: #0e4429;
     --ds-github-contrib-medium: #006d32;
     --ds-github-contrib-high: #26a641;
     --ds-github-contrib-very-high: #39d353;
-
-    /* Chart palette */
-    --ds-chart-1: #5eaab5;
+    --ds-chart-1: #fff;
     --ds-chart-2: #4caf7d;
     --ds-chart-3: #d4a030;
     --ds-chart-4: #cf5555;
-    --ds-chart-5: #7a9ea8;
+    --ds-chart-5: #ccc;
     --ds-chart-6: #c47a50;
     --ds-chart-7: #8a6aaa;
     --ds-chart-8: #667580;
@@ -41,39 +35,63 @@
     --ds-chart-10: #7a9a65;
   }
 
+  /* Light + Neutral */
   [data-theme='light'] {
-    /* Light Theme: Day Beach */
-    --ds-background: #faf6f0;
-    --ds-surface: #ffffff;
-    --ds-surface-alt: #f0e8d8;
-    --ds-text: #2c3e50;
-    --ds-text-muted: #8a9aaa;
-    --ds-primary: #0077a8;
-    --ds-secondary: #5ba4b5;
-    --ds-border: #e0d4b8;
-    --ds-border-focus: #c4b896;
+    --ds-background: #fff;
+    --ds-surface: #fff;
+    --ds-surface-alt: #fff;
+    --ds-text: #1a1a1a;
+    --ds-text-muted: #666;
+    --ds-primary: #000;
+    --ds-secondary: #333;
+    --ds-border: #999;
+    --ds-border-focus: #000;
     --ds-success: #2e7d32;
     --ds-warning: #f57f17;
     --ds-error: #c62828;
     --ds-info: #0277bd;
     --ds-income: #2e7d32;
     --ds-expense: #c62828;
-
-    /* GitHub contribution colors */
     --ds-github-contrib-none: #ebedf0;
     --ds-github-contrib-low: #9be9a8;
     --ds-github-contrib-medium: #40c463;
     --ds-github-contrib-high: #30a14e;
     --ds-github-contrib-very-high: #216e39;
-    --ds-chart-1: #0077a8;
+    --ds-chart-1: #000;
     --ds-chart-2: #2e7d32;
     --ds-chart-3: #f57f17;
     --ds-chart-4: #c62828;
-    --ds-chart-5: #5ba4b5;
+    --ds-chart-5: #333;
     --ds-chart-6: #e65100;
     --ds-chart-7: #7b1fa2;
     --ds-chart-8: #546e7a;
     --ds-chart-9: #00838f;
     --ds-chart-10: #558b2f;
+  }
+
+  /* Dark + Surf (must come after light-neutral to win cascade) */
+  :root[data-surf] {
+    --ds-primary: #d4b483;
+    --ds-secondary: #b89a6a;
+    --ds-text-muted: #8a8580;
+    --ds-border: #3d3833;
+    --ds-border-focus: #d4b483;
+    --ds-chart-1: #d4b483;
+    --ds-chart-5: #b89a6a;
+  }
+
+  /* Light + Surf */
+  [data-theme='light'][data-surf] {
+    --ds-background: #faf6f0;
+    --ds-surface: #faf6f0;
+    --ds-surface-alt: #faf6f0;
+    --ds-text: #1a1a1a;
+    --ds-text-muted: #6b6560;
+    --ds-primary: #8b6914;
+    --ds-secondary: #6b5010;
+    --ds-border: #b5a48a;
+    --ds-border-focus: #8b6914;
+    --ds-chart-1: #8b6914;
+    --ds-chart-5: #6b5010;
   }
 }

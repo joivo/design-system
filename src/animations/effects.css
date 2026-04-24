@@ -1,11 +1,91 @@
-/* Design System - Special Effect Animations */
+/* Design System - Effect Animations (Brutalist Shore v0.4.0) */
 
 @keyframes ds-blink {
-  0%, 100% { opacity: 1; }
+  0%,
+  100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-@keyframes ds-scan {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 4px; }
+/* Drift: each row drifts at its own speed/direction */
+@keyframes ds-drift-1 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(-4%); }
+}
+
+@keyframes ds-drift-2 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(3%); }
+}
+
+@keyframes ds-drift-3 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(-3%); }
+}
+
+@keyframes ds-drift-4 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(2%); }
+}
+
+@keyframes ds-drift-5 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(-2%); }
+}
+
+@keyframes ds-drift-6 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(3%); }
+}
+
+/* Breathe: each row pulses opacity independently */
+@keyframes ds-breathe-1 {
+  0%,
+  100% { opacity: 0.9; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes ds-breathe-2 {
+  0%,
+  100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes ds-breathe-3 {
+  0%,
+  100% { opacity: 0.7; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes ds-breathe-4 {
+  0%,
+  100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes ds-breathe-5 {
+  0%,
+  100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes ds-breathe-6 {
+  0%,
+  100% { opacity: 0.6; }
+  50% { opacity: 0.2; }
+}
+
+/* Foam: brief appearance then vanish */
+@keyframes ds-foam {
+  0%,
+  50%,
+  100% { opacity: 0; }
+  15% { opacity: 0.7; }
+  25% { opacity: 0.9; }
+  40% { opacity: 0.5; }
 }

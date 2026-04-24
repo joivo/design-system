@@ -4,13 +4,16 @@ import './dev.css';
 const app = document.getElementById('app');
 
 app.innerHTML = `
-<button class="theme-toggle" id="theme-toggle">[theme: dark]</button>
+<div style="position: fixed; top: 12px; right: 12px; z-index: 100; display: flex; gap: 4px;">
+  <button class="ds-btn" id="theme-toggle">[theme: dark]</button>
+  <button class="ds-btn" id="surf-toggle">[surf: off]</button>
+</div>
 
 <div class="ds-container dev-container">
 
   <header class="dev-header">
-    <h1>@personal/design-system</h1>
-    <p style="color: var(--ds-text-muted);">v0.2.0 -- interactive dev preview</p>
+    <h1>@joivo/design-system</h1>
+    <p style="color: var(--ds-text-muted);">v0.4.0 -- Brutalist Shore</p>
   </header>
 
   <!-- COLORS -->
@@ -66,17 +69,16 @@ app.innerHTML = `
   <!-- TYPOGRAPHY -->
   <section class="dev-section">
     <h2 class="ds-prefix">Typography</h2>
-    <div class="ds-panel" style="padding: var(--ds-spacing-lg);">
-      <h1>h1 -- Inter 1.75rem</h1>
-      <h2>h2 -- Inter 1.375rem</h2>
-      <h3>h3 -- Inter 1.125rem</h3>
-      <h4>h4 -- Inter 1rem</h4>
-      <h5>h5 -- Inter 0.875rem</h5>
-      <h6>h6 -- Inter 0.8125rem</h6>
+    <div style="border: 1px solid var(--ds-border); padding: var(--ds-spacing-lg);">
+      <h1>h1 -- JetBrains Mono 1.75rem</h1>
+      <h2>h2 -- JetBrains Mono 1.375rem</h2>
+      <h3>h3 -- JetBrains Mono 1.125rem</h3>
+      <h4>h4 -- JetBrains Mono 1rem</h4>
+      <h5>h5 -- JetBrains Mono 0.875rem</h5>
+      <h6>h6 -- JetBrains Mono 0.8125rem</h6>
       <hr class="ds-separator">
-      <p>Body text -- Inter 15px. The quick brown fox jumps over the lazy dog.</p>
+      <p>Body text -- JetBrains Mono 15px. The quick brown fox jumps over the lazy dog.</p>
       <p style="color: var(--ds-text-muted);">Muted text -- secondary information and labels.</p>
-      <p class="ds-mono">Mono accent (.ds-mono) -- JetBrains Mono for code, nav, labels.</p>
     </div>
   </section>
 
@@ -119,19 +121,18 @@ app.innerHTML = `
   <section class="dev-section">
     <h2 class="ds-prefix">Utilities</h2>
 
-    <h3>Panels</h3>
-    <div class="dev-swatch-grid">
-      <div class="ds-panel" style="padding: var(--ds-spacing-lg);"><code>.ds-panel</code></div>
-      <div class="ds-panel-accent" style="padding: var(--ds-spacing-lg);"><code>.ds-panel-accent</code></div>
-      <div class="ds-glass ds-panel" style="padding: var(--ds-spacing-lg);"><code>.ds-glass</code></div>
-    </div>
+    <h3>Bracket Navigation</h3>
+    <nav class="ds-nav-bracket">
+      <a href="#">WRITINGS</a>
+      <a href="#">PROJECTS</a>
+      <a href="#">ABOUT</a>
+      <a href="#">CONTACT</a>
+    </nav>
 
-    <h3>Text Effects</h3>
+    <h3>Text Decorators</h3>
     <div class="dev-stack">
-      <p class="ds-text-glow" style="font-size: 1.5rem;">Glowing text (.ds-text-glow)</p>
       <p class="ds-prefix">Prefixed text (.ds-prefix)</p>
       <p><span class="ds-bracket">Bracketed text</span> (.ds-bracket)</p>
-      <div class="ds-crt-glow ds-panel" style="padding: var(--ds-spacing-md); display: inline-block;">CRT glow (.ds-crt-glow)</div>
     </div>
 
     <h3>Indicators</h3>
@@ -155,33 +156,30 @@ app.innerHTML = `
     </div>
 
     <h3>Scrollbar</h3>
-    <div class="ds-panel ds-custom-scrollbar" style="max-height: 80px; overflow-y: auto; padding: var(--ds-spacing-md); max-width: 300px;">
+    <div class="ds-custom-scrollbar" style="max-height: 80px; overflow-y: auto; padding: var(--ds-spacing-md); max-width: 300px; border: 1px solid var(--ds-border);">
       <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p>
       <p>Line 5</p><p>Line 6</p><p>Line 7</p><p>Line 8</p>
     </div>
   </section>
 
-  <!-- PIXEL WAVES -->
+  <!-- ASCII WAVES -->
   <section class="dev-section">
-    <h2 class="ds-prefix">Pixel Waves</h2>
-    <div class="dev-swatch-grid">
-      <div class="ds-pixel-waves" style="background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
-        <p style="color: var(--ds-text-muted);" class="ds-mono">.ds-pixel-waves (static)</p>
-      </div>
-      <div class="ds-pixel-waves ds-pixel-waves-animated" style="background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius-md); min-height: 200px; display: flex; align-items: center; justify-content: center; padding: var(--ds-spacing-lg);">
-        <p style="color: var(--ds-text-muted);" class="ds-mono">.ds-pixel-waves-animated</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BIOLUMINESCENT -->
-  <section class="dev-section">
-    <h2 class="ds-prefix">Bioluminescent</h2>
-    <div class="dev-flex">
-      <div class="ds-panel ds-bioluminescent" style="padding: var(--ds-spacing-lg); width: 200px;">
-        <code>.ds-bioluminescent</code>
-        <p style="color: var(--ds-text-muted); font-size: 11px; margin-top: 4px;">Decorative accent dot</p>
-      </div>
+    <h2 class="ds-prefix">ASCII Waves</h2>
+    <div class="ds-ascii-waves" style="border: 1px solid var(--ds-border);">
+      <span class="wave">_.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_~^~.~_</span>
+      <span class="wave">~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_~.~.~^~.~.~_</span>
+      <span class="wave">-~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._~-._</span>
+      <span class="wave">~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.~._.</span>
+      <span class="wave">_.~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~._~^~.</span>
+      <span class="wave">~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-~-._.-</span>
+      <span class="foam" style="bottom:4px;left:15%;animation-duration:6s;animation-delay:0s">. *</span>
+      <span class="foam" style="bottom:22px;left:45%;animation-duration:8s;animation-delay:2s">~ .</span>
+      <span class="foam" style="bottom:8px;left:70%;animation-duration:5s;animation-delay:1s">* ~</span>
+      <span class="foam" style="bottom:40px;left:30%;animation-duration:9s;animation-delay:4s">. ~</span>
+      <span class="foam" style="bottom:14px;left:85%;animation-duration:7s;animation-delay:3s">* .</span>
+      <span class="foam" style="bottom:56px;left:55%;animation-duration:10s;animation-delay:5s">~ *</span>
+      <span class="foam" style="bottom:2px;left:25%;animation-duration:6s;animation-delay:2.5s">. . *</span>
+      <span class="foam" style="bottom:30px;left:65%;animation-duration:8s;animation-delay:1.5s">* . ~</span>
     </div>
   </section>
 
@@ -215,6 +213,18 @@ toggleBtn.addEventListener('click', () => {
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
     toggleBtn.textContent = '[theme: light]';
+  }
+});
+
+// Surf toggle
+const surfBtn = document.getElementById('surf-toggle');
+surfBtn.addEventListener('click', () => {
+  if (document.documentElement.hasAttribute('data-surf')) {
+    document.documentElement.removeAttribute('data-surf');
+    surfBtn.textContent = '[surf: off]';
+  } else {
+    document.documentElement.setAttribute('data-surf', '');
+    surfBtn.textContent = '[surf: on]';
   }
 });
 
