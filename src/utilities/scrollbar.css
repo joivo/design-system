@@ -16,6 +16,6 @@
   }
 
   .ds-custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--ds-border-focus);
+    background: var(--ds-primary);
   }
 }
