@@ -2,8 +2,8 @@
 
 @layer base {
   :root {
-    --ds-transition-fast: 100ms;
-    --ds-transition-base: 150ms;
-    --ds-transition-slow: 250ms;
+    --ds-transition-fast: 150ms;
+    --ds-transition-base: 300ms;
+    --ds-transition-slow: 500ms;
   }
 }
