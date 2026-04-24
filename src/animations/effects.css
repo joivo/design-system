@@ -6,88 +6,86 @@
   50% { opacity: 0; }
 }
 
-@keyframes ds-breathe-drift-1 {
+/* Drift: each row drifts at its own speed/direction */
+@keyframes ds-drift-1 {
   0%,
-  100% {
-    transform: translateX(0);
-    opacity: 0.9;
-  }
-
-  15% { opacity: 0.3; }
-
-  35% {
-    transform: translateX(-3%);
-    opacity: 0.85;
-  }
-
-  50% {
-    transform: translateX(-5%);
-    opacity: 0.3;
-  }
-
-  65% {
-    transform: translateX(-3%);
-    opacity: 0.85;
-  }
-
-  85% { opacity: 0.3; }
+  100% { transform: translateX(0); }
+  50% { transform: translateX(-4%); }
 }
 
-@keyframes ds-breathe-drift-2 {
+@keyframes ds-drift-2 {
   0%,
-  100% {
-    transform: translateX(0);
-    opacity: 0.35;
-  }
-
-  20% { opacity: 0.9; }
-
-  40% {
-    transform: translateX(2%);
-    opacity: 0.35;
-  }
-
-  60% {
-    transform: translateX(3%);
-    opacity: 0.9;
-  }
-
-  80% {
-    transform: translateX(2%);
-    opacity: 0.35;
-  }
+  100% { transform: translateX(0); }
+  50% { transform: translateX(3%); }
 }
 
-@keyframes ds-breathe-drift-3 {
+@keyframes ds-drift-3 {
   0%,
-  100% {
-    transform: translateX(0);
-    opacity: 0.7;
-  }
-
-  25% { opacity: 0.25; }
-
-  50% {
-    transform: translateX(-4%);
-    opacity: 0.8;
-  }
-
-  75% { opacity: 0.25; }
+  100% { transform: translateX(0); }
+  50% { transform: translateX(-3%); }
 }
 
-@keyframes ds-breathe-drift-4 {
+@keyframes ds-drift-4 {
   0%,
-  100% {
-    transform: translateX(0);
-    opacity: 0.4;
-  }
+  100% { transform: translateX(0); }
+  50% { transform: translateX(2%); }
+}
 
-  20% { opacity: 0.95; }
+@keyframes ds-drift-5 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(-2%); }
+}
 
-  50% {
-    transform: translateX(2%);
-    opacity: 0.4;
-  }
+@keyframes ds-drift-6 {
+  0%,
+  100% { transform: translateX(0); }
+  50% { transform: translateX(3%); }
+}
 
-  80% { opacity: 0.95; }
+/* Breathe: each row pulses opacity independently */
+@keyframes ds-breathe-1 {
+  0%,
+  100% { opacity: 0.9; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes ds-breathe-2 {
+  0%,
+  100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes ds-breathe-3 {
+  0%,
+  100% { opacity: 0.7; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes ds-breathe-4 {
+  0%,
+  100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes ds-breathe-5 {
+  0%,
+  100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes ds-breathe-6 {
+  0%,
+  100% { opacity: 0.6; }
+  50% { opacity: 0.2; }
+}
+
+/* Foam: brief appearance then vanish */
+@keyframes ds-foam {
+  0%,
+  50%,
+  100% { opacity: 0; }
+  15% { opacity: 0.7; }
+  25% { opacity: 0.9; }
+  40% { opacity: 0.5; }
 }
