@@ -21,19 +21,6 @@ colors:
   info: "#5a9ec4"
   income: "#4caf7d"
   expense: "#cf5555"
-  background-light: "#fff"
-  surface-light: "#fff"
-  surface-alt-light: "#fff"
-  text-light: "#1a1a1a"
-  text-muted-light: "#666"
-  primary-light: "#000"
-  secondary-light: "#333"
-  border-light: "#999"
-  border-focus-light: "#000"
-  success-light: "#2e7d32"
-  warning-light: "#f57f17"
-  error-light: "#c62828"
-  info-light: "#0277bd"
 typography:
   h1:
     fontFamily: JetBrains Mono
@@ -59,11 +46,11 @@ typography:
     lineHeight: 1.6
     letterSpacing: 0.01em
 rounded:
-  none: 0
-  sm: 0
-  md: 0
-  lg: 0
-  xl: 0
+  none: 0px
+  sm: 0px
+  md: 0px
+  lg: 0px
+  xl: 0px
 spacing:
   xs: 0.25rem
   sm: 0.5rem
@@ -77,6 +64,50 @@ components:
     textColor: "{colors.background}"
     rounded: "{rounded.none}"
     padding: 12px
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.secondary}"
+    rounded: "{rounded.none}"
+    padding: 12px
+  button-danger:
+    backgroundColor: "{colors.surface-alt}"
+    textColor: "{colors.error}"
+    rounded: "{rounded.none}"
+    padding: 12px
+  input:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.none}"
+    padding: 8px
+  input-focus:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.border-focus}"
+    rounded: "{rounded.none}"
+    padding: 8px
+  nav-bracket:
+    textColor: "{colors.text-muted}"
+    backgroundColor: "{colors.background}"
+  separator:
+    backgroundColor: "{colors.border}"
+    size: 1px
+  table-header:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.text-muted}"
+  status-success:
+    backgroundColor: "{colors.success}"
+    textColor: "{colors.background}"
+  status-warning:
+    backgroundColor: "{colors.warning}"
+    textColor: "{colors.background}"
+  status-info:
+    backgroundColor: "{colors.info}"
+    textColor: "{colors.background}"
+  finance-income:
+    backgroundColor: "{colors.income}"
+    textColor: "{colors.background}"
+  finance-expense:
+    backgroundColor: "{colors.expense}"
+    textColor: "{colors.background}"
 ---
 
 ## Overview
