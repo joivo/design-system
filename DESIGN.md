@@ -75,7 +75,7 @@ components:
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.background}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.none}"
     padding: 12px
 ---
 
